@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C4242DF254C2B3800F244AA /* AccountInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242DE254C2B3800F244AA /* AccountInfoController.xib */; };
+		0C4242E4254C350C00F244AA /* ResetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242E2254C350C00F244AA /* ResetController.swift */; };
+		0C4242E5254C350C00F244AA /* ResetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242E3254C350C00F244AA /* ResetController.xib */; };
+		0C4242E8254C399A00F244AA /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242E6254C399A00F244AA /* RegistrationController.swift */; };
+		0C4242E9254C399A00F244AA /* RegistrationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242E7254C399A00F244AA /* RegistrationController.xib */; };
+		0C4242EC254C499000F244AA /* RegistrationTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242EA254C499000F244AA /* RegistrationTwoController.swift */; };
+		0C4242ED254C499000F244AA /* RegistrationTwoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242EB254C499000F244AA /* RegistrationTwoController.xib */; };
+		0C4242F0254C4BA100F244AA /* EmailRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242EE254C4BA100F244AA /* EmailRegistrationController.swift */; };
+		0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */; };
+		0C4242F4254C4D0600F244AA /* PasswordRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */; };
+		0C4242F5254C4D0600F244AA /* PasswordRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */; };
 		0CF160EA253E049D00250C6F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160E8253E049D00250C6F /* LoginController.swift */; };
 		0CF160EB253E049D00250C6F /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF160E9253E049D00250C6F /* LoginController.xib */; };
 		0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160ED253E060A00250C6F /* AccountInfoController.swift */; };
-		0CF160F0253E060A00250C6F /* AccountInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF160EE253E060A00250C6F /* AccountInfoController.xib */; };
 		FAA769BD2514D49000750625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA769BC2514D49000750625 /* AppDelegate.swift */; };
 		FAA769C62514D49200750625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA769C52514D49200750625 /* Assets.xcassets */; };
 		FAA769C92514D49200750625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA769C72514D49200750625 /* LaunchScreen.storyboard */; };
@@ -38,10 +48,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C4242DE254C2B3800F244AA /* AccountInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoController.xib; sourceTree = "<group>"; };
+		0C4242E2254C350C00F244AA /* ResetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetController.swift; sourceTree = "<group>"; };
+		0C4242E3254C350C00F244AA /* ResetController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetController.xib; sourceTree = "<group>"; };
+		0C4242E6254C399A00F244AA /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		0C4242E7254C399A00F244AA /* RegistrationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationController.xib; sourceTree = "<group>"; };
+		0C4242EA254C499000F244AA /* RegistrationTwoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTwoController.swift; sourceTree = "<group>"; };
+		0C4242EB254C499000F244AA /* RegistrationTwoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationTwoController.xib; sourceTree = "<group>"; };
+		0C4242EE254C4BA100F244AA /* EmailRegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationController.swift; sourceTree = "<group>"; };
+		0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailRegistrationController.xib; sourceTree = "<group>"; };
+		0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRegisterController.swift; sourceTree = "<group>"; };
+		0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordRegisterController.xib; sourceTree = "<group>"; };
 		0CF160E8253E049D00250C6F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		0CF160E9253E049D00250C6F /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		0CF160ED253E060A00250C6F /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
-		0CF160EE253E060A00250C6F /* AccountInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoController.xib; sourceTree = "<group>"; };
 		FAA769B92514D49000750625 /* GariHub Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GariHub Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA769BC2514D49000750625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA769C52514D49200750625 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +102,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C4242E0254C2B6500F244AA /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0C4242E6254C399A00F244AA /* RegistrationController.swift */,
+				0C4242E7254C399A00F244AA /* RegistrationController.xib */,
+				0C4242EA254C499000F244AA /* RegistrationTwoController.swift */,
+				0C4242EB254C499000F244AA /* RegistrationTwoController.xib */,
+				0C4242EE254C4BA100F244AA /* EmailRegistrationController.swift */,
+				0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */,
+				0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */,
+				0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		0C4242E1254C33DE00F244AA /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				0C4242E2254C350C00F244AA /* ResetController.swift */,
+				0C4242E3254C350C00F244AA /* ResetController.xib */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
 		0CF160E3253E038B00250C6F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				0CF160ED253E060A00250C6F /* AccountInfoController.swift */,
-				0CF160EE253E060A00250C6F /* AccountInfoController.xib */,
+				0C4242DE254C2B3800F244AA /* AccountInfoController.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -153,6 +197,8 @@
 		FAA769EC2514D4CC00750625 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0C4242E1254C33DE00F244AA /* ResetPassword */,
+				0C4242E0254C2B6500F244AA /* Register */,
 				0CF160EC253E05AC00250C6F /* Menu */,
 				0CF160E3253E038B00250C6F /* Login */,
 				FAA769ED2514D50E00750625 /* LandingController.swift */,
@@ -268,8 +314,13 @@
 				FAA769C92514D49200750625 /* LaunchScreen.storyboard in Resources */,
 				0CF160EB253E049D00250C6F /* LoginController.xib in Resources */,
 				FAA769F02514D50E00750625 /* LandingController.xib in Resources */,
+				0C4242F5254C4D0600F244AA /* PasswordRegisterController.xib in Resources */,
+				0C4242E9254C399A00F244AA /* RegistrationController.xib in Resources */,
 				FAA769C62514D49200750625 /* Assets.xcassets in Resources */,
-				0CF160F0253E060A00250C6F /* AccountInfoController.xib in Resources */,
+				0C4242DF254C2B3800F244AA /* AccountInfoController.xib in Resources */,
+				0C4242E5254C350C00F244AA /* ResetController.xib in Resources */,
+				0C4242ED254C499000F244AA /* RegistrationTwoController.xib in Resources */,
+				0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,9 +345,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4242EC254C499000F244AA /* RegistrationTwoController.swift in Sources */,
+				0C4242F4254C4D0600F244AA /* PasswordRegisterController.swift in Sources */,
+				0C4242F0254C4BA100F244AA /* EmailRegistrationController.swift in Sources */,
 				FAA769BD2514D49000750625 /* AppDelegate.swift in Sources */,
 				0CF160EA253E049D00250C6F /* LoginController.swift in Sources */,
 				FAA769EF2514D50E00750625 /* LandingController.swift in Sources */,
+				0C4242E4254C350C00F244AA /* ResetController.swift in Sources */,
+				0C4242E8254C399A00F244AA /* RegistrationController.swift in Sources */,
 				0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
