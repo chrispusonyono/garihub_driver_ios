@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CF160EA253E049D00250C6F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160E8253E049D00250C6F /* LoginController.swift */; };
+		0CF160EB253E049D00250C6F /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF160E9253E049D00250C6F /* LoginController.xib */; };
+		0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160ED253E060A00250C6F /* AccountInfoController.swift */; };
+		0CF160F0253E060A00250C6F /* AccountInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF160EE253E060A00250C6F /* AccountInfoController.xib */; };
 		FAA769BD2514D49000750625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA769BC2514D49000750625 /* AppDelegate.swift */; };
 		FAA769C62514D49200750625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA769C52514D49200750625 /* Assets.xcassets */; };
 		FAA769C92514D49200750625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA769C72514D49200750625 /* LaunchScreen.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CF160E8253E049D00250C6F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		0CF160E9253E049D00250C6F /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		0CF160ED253E060A00250C6F /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		0CF160EE253E060A00250C6F /* AccountInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoController.xib; sourceTree = "<group>"; };
 		FAA769B92514D49000750625 /* GariHub Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GariHub Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA769BC2514D49000750625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA769C52514D49200750625 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +82,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CF160E3253E038B00250C6F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0CF160E8253E049D00250C6F /* LoginController.swift */,
+				0CF160E9253E049D00250C6F /* LoginController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0CF160EC253E05AC00250C6F /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0CF160ED253E060A00250C6F /* AccountInfoController.swift */,
+				0CF160EE253E060A00250C6F /* AccountInfoController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		FAA769B02514D49000750625 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +153,8 @@
 		FAA769EC2514D4CC00750625 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CF160EC253E05AC00250C6F /* Menu */,
+				0CF160E3253E038B00250C6F /* Login */,
 				FAA769ED2514D50E00750625 /* LandingController.swift */,
 				FAA769EE2514D50E00750625 /* LandingController.xib */,
 			);
@@ -238,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA769C92514D49200750625 /* LaunchScreen.storyboard in Resources */,
+				0CF160EB253E049D00250C6F /* LoginController.xib in Resources */,
 				FAA769F02514D50E00750625 /* LandingController.xib in Resources */,
 				FAA769C62514D49200750625 /* Assets.xcassets in Resources */,
+				0CF160F0253E060A00250C6F /* AccountInfoController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA769BD2514D49000750625 /* AppDelegate.swift in Sources */,
+				0CF160EA253E049D00250C6F /* LoginController.swift in Sources */,
 				FAA769EF2514D50E00750625 /* LandingController.swift in Sources */,
+				0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +470,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "garihub.GariHub-Driver";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garihub.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,7 +489,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "garihub.GariHub-Driver";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garihub.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
