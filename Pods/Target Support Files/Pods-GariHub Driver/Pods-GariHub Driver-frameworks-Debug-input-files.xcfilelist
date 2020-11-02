@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-GariHub Driver/Pods-GariHub Driver-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework
+${BUILT_PRODUCTS_DIR}/XCoordinator/XCoordinator.framework

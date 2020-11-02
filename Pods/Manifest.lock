@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.2.2)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - SwiftKeychainWrapper (3.4.0)
+  - XCoordinator (2.0.7):
+    - XCoordinator/Core (= 2.0.7)
+  - XCoordinator/Core (2.0.7)
+
+DEPENDENCIES:
+  - Moya
+  - SwiftKeychainWrapper
+  - XCoordinator
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - SwiftKeychainWrapper
+    - XCoordinator
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+  XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
+
+PODFILE CHECKSUM: a8634f42d170e520a94eae584fa28e06984ce8bb
+
+COCOAPODS: 1.9.3

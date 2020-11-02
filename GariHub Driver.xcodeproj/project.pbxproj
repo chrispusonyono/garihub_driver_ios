@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,9 @@
 		0CF160EA253E049D00250C6F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160E8253E049D00250C6F /* LoginController.swift */; };
 		0CF160EB253E049D00250C6F /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF160E9253E049D00250C6F /* LoginController.xib */; };
 		0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160ED253E060A00250C6F /* AccountInfoController.swift */; };
+		1BDFB57145D4A3B4E9ABA330 /* Pods_GariHub_Driver_GariHub_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7FD770B38039F0480CE43E /* Pods_GariHub_Driver_GariHub_DriverUITests.framework */; };
+		30F336092AF9B590974418F9 /* Pods_GariHub_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE3ED3A85DABFE40BDA4F15 /* Pods_GariHub_Driver.framework */; };
+		9A8A8C35EF49FDFD9D0D325C /* Pods_GariHub_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232500D0863670826F812712 /* Pods_GariHub_DriverTests.framework */; };
 		FAA769BD2514D49000750625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA769BC2514D49000750625 /* AppDelegate.swift */; };
 		FAA769C62514D49200750625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA769C52514D49200750625 /* Assets.xcassets */; };
 		FAA769C92514D49200750625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA769C72514D49200750625 /* LaunchScreen.storyboard */; };
@@ -28,6 +31,23 @@
 		FAA769DF2514D49200750625 /* GariHub_DriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA769DE2514D49200750625 /* GariHub_DriverUITests.swift */; };
 		FAA769EF2514D50E00750625 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA769ED2514D50E00750625 /* LandingController.swift */; };
 		FAA769F02514D50E00750625 /* LandingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA769EE2514D50E00750625 /* LandingController.xib */; };
+		FAA8B1E0254FFB85001484E7 /* AuthTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1DF254FFB85001484E7 /* AuthTarget.swift */; };
+		FAA8B1E3254FFBD1001484E7 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1E2254FFBD1001484E7 /* RegisterRequest.swift */; };
+		FAA8B1E5254FFE01001484E7 /* BaseAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1E4254FFE01001484E7 /* BaseAuthModel.swift */; };
+		FAA8B1E7254FFE51001484E7 /* GariHubDriverClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1E6254FFE51001484E7 /* GariHubDriverClient.swift */; };
+		FAA8B1E9254FFEF4001484E7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1E8254FFEF4001484E7 /* RegistrationViewModel.swift */; };
+		FAA8B1EC254FFF4D001484E7 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1EB254FFF4D001484E7 /* OnboardingCoordinator.swift */; };
+		FAA8B1EE255003A7001484E7 /* EmailRegViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1ED255003A7001484E7 /* EmailRegViewModel.swift */; };
+		FAA8B1F02550063A001484E7 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1EF2550063A001484E7 /* PasswordViewModel.swift */; };
+		FAA8B1F3255018D7001484E7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1F2255018D7001484E7 /* UIViewController+.swift */; };
+		FAA8B1F5255018F5001484E7 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1F4255018F5001484E7 /* ClassNameProtocol.swift */; };
+		FAA8B1F725501C5B001484E7 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1F625501C5B001484E7 /* UITextField+.swift */; };
+		FAA8B1F925501E31001484E7 /* BaseTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1F825501E31001484E7 /* BaseTextFieldController.swift */; };
+		FAA8B1FB25504006001484E7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1FA25504006001484E7 /* LoginViewModel.swift */; };
+		FAA8B1FD255057D5001484E7 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1FC255057D5001484E7 /* LoginResponse.swift */; };
+		FAA8B20125506343001484E7 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1FF25506343001484E7 /* DashboardController.swift */; };
+		FAA8B20225506343001484E7 /* DashboardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA8B20025506343001484E7 /* DashboardController.xib */; };
+		FAA8B2042550650F001484E7 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B2032550650F001484E7 /* DashboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		088C6F29471C3ABE45F99DD8 /* Pods-GariHub DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-GariHub DriverTests/Pods-GariHub DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0C4242DE254C2B3800F244AA /* AccountInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoController.xib; sourceTree = "<group>"; };
 		0C4242E2254C350C00F244AA /* ResetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetController.swift; sourceTree = "<group>"; };
 		0C4242E3254C350C00F244AA /* ResetController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetController.xib; sourceTree = "<group>"; };
@@ -59,9 +80,17 @@
 		0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailRegistrationController.xib; sourceTree = "<group>"; };
 		0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRegisterController.swift; sourceTree = "<group>"; };
 		0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordRegisterController.xib; sourceTree = "<group>"; };
+		0CE3ED3A85DABFE40BDA4F15 /* Pods_GariHub_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GariHub_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CF160E8253E049D00250C6F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		0CF160E9253E049D00250C6F /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		0CF160ED253E060A00250C6F /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		116072AF655D3CB98FACCDBA /* Pods-GariHub Driver-GariHub DriverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub Driver-GariHub DriverUITests.debug.xcconfig"; path = "Target Support Files/Pods-GariHub Driver-GariHub DriverUITests/Pods-GariHub Driver-GariHub DriverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1BF437288AD15966441B86E5 /* Pods-GariHub Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub Driver.debug.xcconfig"; path = "Target Support Files/Pods-GariHub Driver/Pods-GariHub Driver.debug.xcconfig"; sourceTree = "<group>"; };
+		232500D0863670826F812712 /* Pods_GariHub_DriverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GariHub_DriverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2710E4A17335E3D2469D06E0 /* Pods-GariHub DriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub DriverTests.release.xcconfig"; path = "Target Support Files/Pods-GariHub DriverTests/Pods-GariHub DriverTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B9480CC70790AA7DD8C2575 /* Pods-GariHub Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub Driver.release.xcconfig"; path = "Target Support Files/Pods-GariHub Driver/Pods-GariHub Driver.release.xcconfig"; sourceTree = "<group>"; };
+		5F4E59CC914A161ECE2D28DE /* Pods-GariHub Driver-GariHub DriverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub Driver-GariHub DriverUITests.release.xcconfig"; path = "Target Support Files/Pods-GariHub Driver-GariHub DriverUITests/Pods-GariHub Driver-GariHub DriverUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DB7FD770B38039F0480CE43E /* Pods_GariHub_Driver_GariHub_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GariHub_Driver_GariHub_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA769B92514D49000750625 /* GariHub Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GariHub Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA769BC2514D49000750625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA769C52514D49200750625 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +104,23 @@
 		FAA769E02514D49200750625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA769ED2514D50E00750625 /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
 		FAA769EE2514D50E00750625 /* LandingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LandingController.xib; sourceTree = "<group>"; };
+		FAA8B1DF254FFB85001484E7 /* AuthTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTarget.swift; sourceTree = "<group>"; };
+		FAA8B1E2254FFBD1001484E7 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		FAA8B1E4254FFE01001484E7 /* BaseAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuthModel.swift; sourceTree = "<group>"; };
+		FAA8B1E6254FFE51001484E7 /* GariHubDriverClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GariHubDriverClient.swift; sourceTree = "<group>"; };
+		FAA8B1E8254FFEF4001484E7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		FAA8B1EB254FFF4D001484E7 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		FAA8B1ED255003A7001484E7 /* EmailRegViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegViewModel.swift; sourceTree = "<group>"; };
+		FAA8B1EF2550063A001484E7 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
+		FAA8B1F2255018D7001484E7 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		FAA8B1F4255018F5001484E7 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
+		FAA8B1F625501C5B001484E7 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		FAA8B1F825501E31001484E7 /* BaseTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldController.swift; sourceTree = "<group>"; };
+		FAA8B1FA25504006001484E7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FAA8B1FC255057D5001484E7 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		FAA8B1FF25506343001484E7 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		FAA8B20025506343001484E7 /* DashboardController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardController.xib; sourceTree = "<group>"; };
+		FAA8B2032550650F001484E7 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F336092AF9B590974418F9 /* Pods_GariHub_Driver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8A8C35EF49FDFD9D0D325C /* Pods_GariHub_DriverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BDFB57145D4A3B4E9ABA330 /* Pods_GariHub_Driver_GariHub_DriverUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +162,10 @@
 				0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */,
 				0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */,
 				0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */,
+				FAA8B1E4254FFE01001484E7 /* BaseAuthModel.swift */,
+				FAA8B1E8254FFEF4001484E7 /* RegistrationViewModel.swift */,
+				FAA8B1ED255003A7001484E7 /* EmailRegViewModel.swift */,
+				FAA8B1EF2550063A001484E7 /* PasswordViewModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -131,6 +184,7 @@
 			children = (
 				0CF160E8253E049D00250C6F /* LoginController.swift */,
 				0CF160E9253E049D00250C6F /* LoginController.xib */,
+				FAA8B1FA25504006001484E7 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -144,6 +198,29 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		AE4943E893CD619F0BFC1FBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CE3ED3A85DABFE40BDA4F15 /* Pods_GariHub_Driver.framework */,
+				DB7FD770B38039F0480CE43E /* Pods_GariHub_Driver_GariHub_DriverUITests.framework */,
+				232500D0863670826F812712 /* Pods_GariHub_DriverTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C96C4AFC5A921CE36C47BD8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BF437288AD15966441B86E5 /* Pods-GariHub Driver.debug.xcconfig */,
+				4B9480CC70790AA7DD8C2575 /* Pods-GariHub Driver.release.xcconfig */,
+				116072AF655D3CB98FACCDBA /* Pods-GariHub Driver-GariHub DriverUITests.debug.xcconfig */,
+				5F4E59CC914A161ECE2D28DE /* Pods-GariHub Driver-GariHub DriverUITests.release.xcconfig */,
+				088C6F29471C3ABE45F99DD8 /* Pods-GariHub DriverTests.debug.xcconfig */,
+				2710E4A17335E3D2469D06E0 /* Pods-GariHub DriverTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FAA769B02514D49000750625 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +228,8 @@
 				FAA769D22514D49200750625 /* GariHub DriverTests */,
 				FAA769DD2514D49200750625 /* GariHub DriverUITests */,
 				FAA769BA2514D49000750625 /* Products */,
+				C96C4AFC5A921CE36C47BD8F /* Pods */,
+				AE4943E893CD619F0BFC1FBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,11 +246,17 @@
 		FAA769BB2514D49000750625 /* GariHub Driver */ = {
 			isa = PBXGroup;
 			children = (
+				FAA8B1F1255018B5001484E7 /* Utils */,
+				FAA8B1EA254FFF1D001484E7 /* Coordinators */,
+				FAA8B1E1254FFBC0001484E7 /* Models */,
+				FAA8B1DE254FFB6D001484E7 /* Network */,
 				FAA769EC2514D4CC00750625 /* Views */,
 				FAA769BC2514D49000750625 /* AppDelegate.swift */,
 				FAA769C52514D49200750625 /* Assets.xcassets */,
 				FAA769C72514D49200750625 /* LaunchScreen.storyboard */,
 				FAA769CA2514D49200750625 /* Info.plist */,
+				FAA8B1E6254FFE51001484E7 /* GariHubDriverClient.swift */,
+				FAA8B1F825501E31001484E7 /* BaseTextFieldController.swift */,
 			);
 			path = "GariHub Driver";
 			sourceTree = "<group>";
@@ -197,6 +282,7 @@
 		FAA769EC2514D4CC00750625 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAA8B1FE255062D2001484E7 /* Dashboard */,
 				0C4242E1254C33DE00F244AA /* ResetPassword */,
 				0C4242E0254C2B6500F244AA /* Register */,
 				0CF160EC253E05AC00250C6F /* Menu */,
@@ -207,6 +293,51 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FAA8B1DE254FFB6D001484E7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FAA8B1DF254FFB85001484E7 /* AuthTarget.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FAA8B1E1254FFBC0001484E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAA8B1E2254FFBD1001484E7 /* RegisterRequest.swift */,
+				FAA8B1FC255057D5001484E7 /* LoginResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAA8B1EA254FFF1D001484E7 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				FAA8B1EB254FFF4D001484E7 /* OnboardingCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		FAA8B1F1255018B5001484E7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FAA8B1F2255018D7001484E7 /* UIViewController+.swift */,
+				FAA8B1F4255018F5001484E7 /* ClassNameProtocol.swift */,
+				FAA8B1F625501C5B001484E7 /* UITextField+.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FAA8B1FE255062D2001484E7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				FAA8B1FF25506343001484E7 /* DashboardController.swift */,
+				FAA8B20025506343001484E7 /* DashboardController.xib */,
+				FAA8B2032550650F001484E7 /* DashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,9 +345,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAA769E32514D49200750625 /* Build configuration list for PBXNativeTarget "GariHub Driver" */;
 			buildPhases = (
+				18F782D1331A2E488E29C0A6 /* [CP] Check Pods Manifest.lock */,
 				FAA769B52514D49000750625 /* Sources */,
 				FAA769B62514D49000750625 /* Frameworks */,
 				FAA769B72514D49000750625 /* Resources */,
+				CACC7C3935461BFB75C178B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +364,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAA769E62514D49200750625 /* Build configuration list for PBXNativeTarget "GariHub DriverTests" */;
 			buildPhases = (
+				B36E61337420BBD1CF0E6BD7 /* [CP] Check Pods Manifest.lock */,
 				FAA769CB2514D49200750625 /* Sources */,
 				FAA769CC2514D49200750625 /* Frameworks */,
 				FAA769CD2514D49200750625 /* Resources */,
@@ -249,9 +383,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAA769E92514D49200750625 /* Build configuration list for PBXNativeTarget "GariHub DriverUITests" */;
 			buildPhases = (
+				DDC49DA858B32E4E9FF2BB7C /* [CP] Check Pods Manifest.lock */,
 				FAA769D62514D49200750625 /* Sources */,
 				FAA769D72514D49200750625 /* Frameworks */,
 				FAA769D82514D49200750625 /* Resources */,
+				0641E209AE20BE13450481D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,6 +457,7 @@
 				0C4242E5254C350C00F244AA /* ResetController.xib in Resources */,
 				0C4242ED254C499000F244AA /* RegistrationTwoController.xib in Resources */,
 				0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */,
+				FAA8B20225506343001484E7 /* DashboardController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,18 +477,137 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0641E209AE20BE13450481D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GariHub Driver-GariHub DriverUITests/Pods-GariHub Driver-GariHub DriverUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GariHub Driver-GariHub DriverUITests/Pods-GariHub Driver-GariHub DriverUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GariHub Driver-GariHub DriverUITests/Pods-GariHub Driver-GariHub DriverUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18F782D1331A2E488E29C0A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GariHub Driver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B36E61337420BBD1CF0E6BD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GariHub DriverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CACC7C3935461BFB75C178B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GariHub Driver/Pods-GariHub Driver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GariHub Driver/Pods-GariHub Driver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GariHub Driver/Pods-GariHub Driver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDC49DA858B32E4E9FF2BB7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GariHub Driver-GariHub DriverUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAA769B52514D49000750625 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA8B1E5254FFE01001484E7 /* BaseAuthModel.swift in Sources */,
+				FAA8B2042550650F001484E7 /* DashboardViewModel.swift in Sources */,
 				0C4242EC254C499000F244AA /* RegistrationTwoController.swift in Sources */,
+				FAA8B1FD255057D5001484E7 /* LoginResponse.swift in Sources */,
+				FAA8B1FB25504006001484E7 /* LoginViewModel.swift in Sources */,
+				FAA8B1E3254FFBD1001484E7 /* RegisterRequest.swift in Sources */,
+				FAA8B1E9254FFEF4001484E7 /* RegistrationViewModel.swift in Sources */,
+				FAA8B1EE255003A7001484E7 /* EmailRegViewModel.swift in Sources */,
+				FAA8B1EC254FFF4D001484E7 /* OnboardingCoordinator.swift in Sources */,
 				0C4242F4254C4D0600F244AA /* PasswordRegisterController.swift in Sources */,
 				0C4242F0254C4BA100F244AA /* EmailRegistrationController.swift in Sources */,
+				FAA8B1F925501E31001484E7 /* BaseTextFieldController.swift in Sources */,
 				FAA769BD2514D49000750625 /* AppDelegate.swift in Sources */,
 				0CF160EA253E049D00250C6F /* LoginController.swift in Sources */,
+				FAA8B1E7254FFE51001484E7 /* GariHubDriverClient.swift in Sources */,
+				FAA8B1F725501C5B001484E7 /* UITextField+.swift in Sources */,
 				FAA769EF2514D50E00750625 /* LandingController.swift in Sources */,
+				FAA8B20125506343001484E7 /* DashboardController.swift in Sources */,
+				FAA8B1F5255018F5001484E7 /* ClassNameProtocol.swift in Sources */,
+				FAA8B1E0254FFB85001484E7 /* AuthTarget.swift in Sources */,
 				0C4242E4254C350C00F244AA /* ResetController.swift in Sources */,
+				FAA8B1F3255018D7001484E7 /* UIViewController+.swift in Sources */,
+				FAA8B1F02550063A001484E7 /* PasswordViewModel.swift in Sources */,
 				0C4242E8254C399A00F244AA /* RegistrationController.swift in Sources */,
 				0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */,
 			);
@@ -516,6 +772,7 @@
 		};
 		FAA769E42514D49200750625 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BF437288AD15966441B86E5 /* Pods-GariHub Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,7 +784,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.garihub.driver;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "GariHub Driver";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -535,6 +792,7 @@
 		};
 		FAA769E52514D49200750625 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B9480CC70790AA7DD8C2575 /* Pods-GariHub Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,7 +804,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.garihub.driver;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "GariHub Driver";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -554,6 +812,7 @@
 		};
 		FAA769E72514D49200750625 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 088C6F29471C3ABE45F99DD8 /* Pods-GariHub DriverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -576,6 +835,7 @@
 		};
 		FAA769E82514D49200750625 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2710E4A17335E3D2469D06E0 /* Pods-GariHub DriverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -598,6 +858,7 @@
 		};
 		FAA769EA2514D49200750625 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 116072AF655D3CB98FACCDBA /* Pods-GariHub Driver-GariHub DriverUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -618,6 +879,7 @@
 		};
 		FAA769EB2514D49200750625 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F4E59CC914A161ECE2D28DE /* Pods-GariHub Driver-GariHub DriverUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="GariHub_Driver" customModuleProvider="target">
             <connections>
+                <outlet property="emailAddress" destination="Xy3-UB-gMc" id="hZS-fd-qb8"/>
+                <outlet property="password" destination="xaj-Eq-iG4" id="4k8-jw-4jW"/>
+                <outlet property="signInBtn" destination="Jsn-s7-zwV" id="cnI-6f-6xm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -1,0 +1,6 @@
+framework module Pods_GariHub_Driver {
+  umbrella header "Pods-GariHub Driver-umbrella.h"
+
+  export *
+  module * { export * }
+}

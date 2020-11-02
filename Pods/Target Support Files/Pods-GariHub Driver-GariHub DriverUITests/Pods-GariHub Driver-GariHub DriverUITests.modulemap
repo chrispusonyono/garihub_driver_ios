@@ -1,0 +1,6 @@
+framework module Pods_GariHub_Driver_GariHub_DriverUITests {
+  umbrella header "Pods-GariHub Driver-GariHub DriverUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
