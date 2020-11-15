@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C377FC825616FE700F7B287 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C377FC625616FE700F7B287 /* MainController.swift */; };
+		0C377FC925616FE700F7B287 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C377FC725616FE700F7B287 /* MainController.xib */; };
 		0C4242DF254C2B3800F244AA /* AccountInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242DE254C2B3800F244AA /* AccountInfoController.xib */; };
 		0C4242E4254C350C00F244AA /* ResetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242E2254C350C00F244AA /* ResetController.swift */; };
 		0C4242E5254C350C00F244AA /* ResetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242E3254C350C00F244AA /* ResetController.xib */; };
@@ -69,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		088C6F29471C3ABE45F99DD8 /* Pods-GariHub DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-GariHub DriverTests/Pods-GariHub DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0C377FC625616FE700F7B287 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		0C377FC725616FE700F7B287 /* MainController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
 		0C4242DE254C2B3800F244AA /* AccountInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoController.xib; sourceTree = "<group>"; };
 		0C4242E2254C350C00F244AA /* ResetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetController.swift; sourceTree = "<group>"; };
 		0C4242E3254C350C00F244AA /* ResetController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetController.xib; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C377FC525616C9700F7B287 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0C377FC625616FE700F7B287 /* MainController.swift */,
+				0C377FC725616FE700F7B287 /* MainController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		0C4242E0254C2B6500F244AA /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +295,7 @@
 		FAA769EC2514D4CC00750625 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0C377FC525616C9700F7B287 /* Profile */,
 				FAA8B1FE255062D2001484E7 /* Dashboard */,
 				0C4242E1254C33DE00F244AA /* ResetPassword */,
 				0C4242E0254C2B6500F244AA /* Register */,
@@ -455,6 +469,7 @@
 				FAA769C62514D49200750625 /* Assets.xcassets in Resources */,
 				0C4242DF254C2B3800F244AA /* AccountInfoController.xib in Resources */,
 				0C4242E5254C350C00F244AA /* ResetController.xib in Resources */,
+				0C377FC925616FE700F7B287 /* MainController.xib in Resources */,
 				0C4242ED254C499000F244AA /* RegistrationTwoController.xib in Resources */,
 				0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */,
 				FAA8B20225506343001484E7 /* DashboardController.xib in Resources */,
@@ -609,6 +624,7 @@
 				FAA8B1F3255018D7001484E7 /* UIViewController+.swift in Sources */,
 				FAA8B1F02550063A001484E7 /* PasswordViewModel.swift in Sources */,
 				0C4242E8254C399A00F244AA /* RegistrationController.swift in Sources */,
+				0C377FC825616FE700F7B287 /* MainController.swift in Sources */,
 				0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -776,7 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99FHHVY5LH;
+				DEVELOPMENT_TEAM = ML9LTUG94M;
 				INFOPLIST_FILE = "GariHub Driver/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -796,7 +812,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99FHHVY5LH;
+				DEVELOPMENT_TEAM = ML9LTUG94M;
 				INFOPLIST_FILE = "GariHub Driver/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

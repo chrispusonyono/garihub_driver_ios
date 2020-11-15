@@ -28,7 +28,7 @@ class OnboardingCoordinator: NavigationCoordinator<OnboardingRoutes> {
         navigationController.navigationBar.barTintColor = .black
         navigationController.navigationBar.tintColor = .black
         
-        super.init(rootViewController: navigationController, initialRoute: .register)
+        super.init(rootViewController: navigationController, initialRoute: .login)
     }
     
     override func prepareTransition(for route: OnboardingRoutes) -> NavigationTransition {

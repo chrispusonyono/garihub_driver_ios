@@ -103,7 +103,7 @@ class LoginController: UIViewController {
                     
                 } catch {
                     DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Invalid credentials", message: "Kind enter valid username and password", preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "Invalid credentials", message: "Kindly enter valid username and password", preferredStyle: .alert)
                         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                         alertController.addAction(defaultAction)
                         self.present(alertController, animated: true, completion: nil)

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainController" customModule="GariHub_Driver" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zY-2W-oh5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mO-aP-SQZ" userLabel="Menus">
+                    <rect key="frame" x="0.0" y="280" width="414" height="616"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5mO-aP-SQZ" secondAttribute="bottom" id="1eC-Wa-b5b"/>
+                <constraint firstItem="5mO-aP-SQZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="2pr-NH-X58"/>
+                <constraint firstItem="5mO-aP-SQZ" firstAttribute="height" secondItem="8zY-2W-oh5" secondAttribute="height" multiplier="2.2:1" id="9ng-Ub-6Zg"/>
+                <constraint firstItem="8zY-2W-oh5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DxR-po-Ib3"/>
+                <constraint firstItem="8zY-2W-oh5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Eqs-kC-R9Z"/>
+                <constraint firstItem="8zY-2W-oh5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Rii-yO-Vyb"/>
+                <constraint firstItem="5mO-aP-SQZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="d3w-O4-dU2"/>
+                <constraint firstItem="5mO-aP-SQZ" firstAttribute="top" secondItem="8zY-2W-oh5" secondAttribute="bottom" id="e9C-Wn-LAN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="106.47321428571428"/>
+        </view>
+    </objects>
+</document>
