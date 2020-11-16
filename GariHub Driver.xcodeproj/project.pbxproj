@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C267C422561EC9800EE819E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C267C412561EC9800EE819E /* ViewModel.swift */; };
 		0C377FC825616FE700F7B287 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C377FC625616FE700F7B287 /* MainController.swift */; };
 		0C377FC925616FE700F7B287 /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C377FC725616FE700F7B287 /* MainController.xib */; };
 		0C4242DF254C2B3800F244AA /* AccountInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242DE254C2B3800F244AA /* AccountInfoController.xib */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		088C6F29471C3ABE45F99DD8 /* Pods-GariHub DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-GariHub DriverTests/Pods-GariHub DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0C267C412561EC9800EE819E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0C377FC625616FE700F7B287 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		0C377FC725616FE700F7B287 /* MainController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainController.xib; sourceTree = "<group>"; };
 		0C4242DE254C2B3800F244AA /* AccountInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountInfoController.xib; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				0C377FC625616FE700F7B287 /* MainController.swift */,
 				0C377FC725616FE700F7B287 /* MainController.xib */,
+				0C267C412561EC9800EE819E /* ViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				FAA8B1EE255003A7001484E7 /* EmailRegViewModel.swift in Sources */,
 				FAA8B1EC254FFF4D001484E7 /* OnboardingCoordinator.swift in Sources */,
 				0C4242F4254C4D0600F244AA /* PasswordRegisterController.swift in Sources */,
+				0C267C422561EC9800EE819E /* ViewModel.swift in Sources */,
 				0C4242F0254C4BA100F244AA /* EmailRegistrationController.swift in Sources */,
 				FAA8B1F925501E31001484E7 /* BaseTextFieldController.swift in Sources */,
 				FAA769BD2514D49000750625 /* AppDelegate.swift in Sources */,

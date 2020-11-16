@@ -26,5 +26,8 @@ class MainController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    private func setUpUI(){
+        
+    }
 
 }

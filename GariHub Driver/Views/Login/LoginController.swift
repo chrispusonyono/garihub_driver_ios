@@ -38,6 +38,7 @@ class LoginController: UIViewController {
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
+                self.viewModel?.router.trigger(.profile)
             case .success(let response):
                 
                 do {

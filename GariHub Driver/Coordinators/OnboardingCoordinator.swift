@@ -15,6 +15,7 @@ enum OnboardingRoutes: Route {
     case login
     case passwordRegister(fullName: String, gender: String, email: String)
     case register
+    case profile
 }
 
 class OnboardingCoordinator: NavigationCoordinator<OnboardingRoutes> {
@@ -61,6 +62,11 @@ class OnboardingCoordinator: NavigationCoordinator<OnboardingRoutes> {
             let loginVC = LoginController()
             loginVC.viewModel = viewModel
             return .set([loginVC])
+        case .profile:
+           // let viewModel = ViewModel(client: client, router: self.strongRouter)
+            let profileCV = MainController()
+            //profileCV.viewModel = viewModel
+            return .set([profileCV])
         }
     }
 }
