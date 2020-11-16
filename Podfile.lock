@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
+  - ImageLoader (0.15.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -10,6 +11,7 @@ PODS:
   - XCoordinator/Core (2.0.7)
 
 DEPENDENCIES:
+  - ImageLoader
   - Moya
   - SwiftKeychainWrapper
   - XCoordinator
@@ -17,16 +19,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ImageLoader
     - Moya
     - SwiftKeychainWrapper
     - XCoordinator
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  ImageLoader: e0635d52020d64dc7687e3a3b14dc53212ac0442
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: a8634f42d170e520a94eae584fa28e06984ce8bb
+PODFILE CHECKSUM: 205af1cf73357a0f9c1d94bbe5b3810dc31a7992
 
 COCOAPODS: 1.9.3

@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import XCoordinator
+class ViewModel{
+        //MARK: Properties
+
+        let router: StrongRouter<OnboardingRoutes>
+        var fullName: String
+        var mobile: String
+        var email: String
+        
+        
+        
+        init(fullName: String, mobile: String, email: String, router: StrongRouter<OnboardingRoutes>) {
+        
+            self.fullName=fullName
+            self.mobile=mobile
+            self.email=email
+            self.router=router
+        }
+        
+    }

@@ -126,7 +126,7 @@
                                         <constraint firstAttribute="height" constant="40" id="ngZ-yh-50S"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
                                     </userDefinedRuntimeAttributes>

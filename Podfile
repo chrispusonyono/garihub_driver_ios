@@ -9,6 +9,7 @@ target 'GariHub Driver' do
   pod 'Moya'
   pod 'SwiftKeychainWrapper'
   pod 'XCoordinator'
+  pod 'ImageLoader'
 
   target 'GariHub DriverTests' do
     inherit! :search_paths
