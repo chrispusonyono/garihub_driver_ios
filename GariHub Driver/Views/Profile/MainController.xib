@@ -108,11 +108,53 @@
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CP-Ow-yfT">
                                     <rect key="frame" x="90" y="55" width="324" height="27.5"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En4-XY-Yhw">
+                                            <rect key="frame" x="10" y="0.0" width="41" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="albertanewton@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSk-AO-Qd4">
+                                            <rect key="frame" x="56" y="0.0" width="196.5" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="En4-XY-Yhw" firstAttribute="leading" secondItem="2CP-Ow-yfT" secondAttribute="leading" constant="10" id="6iM-Gm-doc"/>
+                                        <constraint firstAttribute="bottom" secondItem="fSk-AO-Qd4" secondAttribute="bottom" id="80V-9y-kH7"/>
+                                        <constraint firstAttribute="bottom" secondItem="En4-XY-Yhw" secondAttribute="bottom" id="FXx-FF-6gh"/>
+                                        <constraint firstItem="En4-XY-Yhw" firstAttribute="top" secondItem="2CP-Ow-yfT" secondAttribute="top" id="P9u-Ll-NXP"/>
+                                        <constraint firstItem="fSk-AO-Qd4" firstAttribute="top" secondItem="2CP-Ow-yfT" secondAttribute="top" id="daL-5Q-gr4"/>
+                                        <constraint firstItem="fSk-AO-Qd4" firstAttribute="leading" secondItem="En4-XY-Yhw" secondAttribute="trailing" constant="5" id="v18-TA-Mlv"/>
+                                    </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUg-OE-xd3">
                                     <rect key="frame" x="90" y="82.5" width="324" height="27.5"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlT-46-5Ge">
+                                            <rect key="frame" x="10" y="0.0" width="48" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+254700000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSf-1l-xsB">
+                                            <rect key="frame" x="63" y="0.0" width="128.5" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="MlT-46-5Ge" secondAttribute="bottom" id="HH9-cA-DZy"/>
+                                        <constraint firstItem="TSf-1l-xsB" firstAttribute="top" secondItem="mUg-OE-xd3" secondAttribute="top" id="Oh7-l0-L1X"/>
+                                        <constraint firstItem="TSf-1l-xsB" firstAttribute="leading" secondItem="MlT-46-5Ge" secondAttribute="trailing" constant="5" id="Rpp-RR-SSd"/>
+                                        <constraint firstItem="MlT-46-5Ge" firstAttribute="top" secondItem="mUg-OE-xd3" secondAttribute="top" id="kWz-qq-IIB"/>
+                                        <constraint firstItem="MlT-46-5Ge" firstAttribute="leading" secondItem="mUg-OE-xd3" secondAttribute="leading" constant="10" id="oHl-L8-Mn5"/>
+                                        <constraint firstAttribute="bottom" secondItem="TSf-1l-xsB" secondAttribute="bottom" id="uqc-W7-yAo"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                             <constraints>
