@@ -12,7 +12,10 @@ import ImageLoader
 class MainController: UIViewController {
     
     var viewModel: ViewModel?
+    var shown = false
     
+    @IBOutlet weak var stateBar: UIView!
+    @IBOutlet weak var dropDownToggle: UIImageView!
     @IBOutlet weak var profileTxt: UILabel!
     @IBOutlet weak var tripsTxt: UILabel!
     @IBOutlet weak var settingsTxt: UILabel!
@@ -45,6 +48,8 @@ class MainController: UIViewController {
         let login = UITapGestureRecognizer(target: self, action: #selector(self.goToLogin(_:)))
         let notAvailable = UITapGestureRecognizer(target: self, action: #selector(self.unAvailable(_:)))
         let Profile = UITapGestureRecognizer(target: self, action: #selector(self.unAvailable(_:)))
+        let toggle = UITapGestureRecognizer(target: self, action: #selector(self.toggleState(_:)))
+        let goOnlineOffline = UITapGestureRecognizer(target: self, action: #selector(self.changeDriverState(_:)))
         
         closeNavigationMenu.addGestureRecognizer(dashboard)
         closeNavigationMenu.isUserInteractionEnabled = true
@@ -70,6 +75,12 @@ class MainController: UIViewController {
         logoutTxt.addGestureRecognizer(login)
         logoutTxt.isUserInteractionEnabled = true
         
+        dropDownToggle.addGestureRecognizer(toggle)
+        dropDownToggle.isUserInteractionEnabled = true
+        
+        stateBar.addGestureRecognizer(goOnlineOffline)
+        stateBar.isUserInteractionEnabled = true
+        
         email.text = viewModel?.email
         number.text = viewModel?.mobile
         fullName.text = viewModel?.fullName
@@ -83,6 +94,15 @@ class MainController: UIViewController {
     }
     @objc func goToLogin(_ sender: UITapGestureRecognizer) {
         self.viewModel?.router.trigger(.login)
+    }
+    @objc func toggleState(_ sender: UITapGestureRecognizer){
+        self.stateBar.isHidden = shown
+        shown = !shown
+    }
+    
+    @objc func changeDriverState(_ sender: UITapGestureRecognizer){
+        
+        
     }
     @objc func unAvailable(_ sender: UITapGestureRecognizer) {
         let alertController = UIAlertController(title: "Info", message: "The page is not available", preferredStyle: .alert)
@@ -132,4 +152,50 @@ extension UIView{
         mask.path = path.cgPath
         layer.mask = mask
     }
+
+        enum Visibility {
+            case visible
+            case invisible
+            case gone
+        }
+
+        var visibility: Visibility {
+            get {
+                let constraint = (self.constraints.filter{$0.firstAttribute == .height && $0.constant == 0}.first)
+                if let constraint = constraint, constraint.isActive {
+                    return .gone
+                } else {
+                    return self.isHidden ? .invisible : .visible
+                }
+            }
+            set {
+                if self.visibility != newValue {
+                    self.setVisibility(newValue)
+                }
+            }
+        }
+
+        private func setVisibility(_ visibility: Visibility) {
+            let constraint = (self.constraints.filter{$0.firstAttribute == .height && $0.constant == 0}.first)
+
+            switch visibility {
+            case .visible:
+                constraint?.isActive = false
+                self.isHidden = false
+                break
+            case .invisible:
+                constraint?.isActive = false
+                self.isHidden = true
+                break
+            case .gone:
+                if let constraint = constraint {
+                    constraint.isActive = true
+                } else {
+                    let constraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+                    self.addConstraint(constraint)
+                    constraint.isActive = true
+                }
+            }
+        }
+    
 }
