@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.router = .init()
         self.router.setRoot(for: self.window ?? .init(frame: UIScreen.main.bounds))
         registerForPushNotifications()
+        GMSServices.provideAPIKey("YOUR_API_KEY")        
+        GMSPlacesClient.provideAPIKey("YOUR_API_KEY")
         return true
     }
     

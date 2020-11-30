@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardController" customModule="GariHub_Driver" customModuleProvider="target">
             <connections>
+                <outlet property="navigationDrawer" destination="bKA-3Q-3iu" id="79p-LY-FnK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,17 +20,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MP2-iU-w9L">
-                    <rect key="frame" x="0.0" y="44" width="414" height="304"/>
+                    <rect key="frame" x="0.0" y="44" width="574" height="268"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bKA-3Q-3iu">
-                            <rect key="frame" x="8" y="8" width="71" height="88"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseline_menu_black_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="bKA-3Q-3iu">
+                            <rect key="frame" x="8" y="8" width="66" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-N9-5A2">
-                            <rect key="frame" x="20" y="130" width="374" height="174"/>
+                            <rect key="frame" x="20" y="114.5" width="518.5" height="153.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Alberta!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-J1-5Ed">
-                                    <rect key="frame" x="0.0" y="0.0" width="209" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Chrispus!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-J1-5Ed">
+                                    <rect key="frame" x="0.0" y="0.0" width="228" height="30"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -41,13 +42,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Going online will help you get rides and earn from the trips you take." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g80-O5-LDy">
-                                    <rect key="frame" x="0.0" y="75" width="341.5" height="41"/>
+                                    <rect key="frame" x="0.0" y="75" width="518.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-FL-66f">
-                                    <rect key="frame" x="0.0" y="124" width="374" height="50"/>
+                                    <rect key="frame" x="0.0" y="103.5" width="518.5" height="50"/>
                                     <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="5SQ-aG-iJ3"/>
@@ -55,6 +56,9 @@
                                     <state key="normal" title="Go Online">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="goOnline:" destination="-1" eventType="touchUpInside" id="LOt-dh-rxC"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -62,6 +66,10 @@
                                 <constraint firstAttribute="trailing" secondItem="aQJ-FL-66f" secondAttribute="trailing" id="S29-XN-euC"/>
                             </constraints>
                         </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseline_close_white_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="SmB-w9-9bs">
+                            <rect key="frame" x="362" y="8" width="44" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -74,6 +82,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="MP2-iU-w9L" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8pa-8V-cka"/>
                 <constraint firstItem="MP2-iU-w9L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Mi6-ZS-vT4"/>
@@ -81,10 +90,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="131.8840579710145" y="141.96428571428569"/>
+            <point key="canvasLocation" x="131.8840579710145" y="141.29464285714286"/>
         </view>
     </objects>
     <resources>
-        <image name="AppIcon" width="42" height="38"/>
+        <image name="baseline_close_white_48pt" width="48" height="48"/>
+        <image name="baseline_menu_black_48pt" width="48" height="48"/>
     </resources>
 </document>

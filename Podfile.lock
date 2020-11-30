@@ -1,5 +1,12 @@
 PODS:
   - Alamofire (5.2.2)
+  - GoogleMaps (4.0.0):
+    - GoogleMaps/Maps (= 4.0.0)
+  - GoogleMaps/Base (4.0.0)
+  - GoogleMaps/Maps (4.0.0):
+    - GoogleMaps/Base
+  - GooglePlaces (4.0.0):
+    - GoogleMaps/Base (= 4.0.0)
   - ImageLoader (0.15.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
@@ -11,6 +18,8 @@ PODS:
   - XCoordinator/Core (2.0.7)
 
 DEPENDENCIES:
+  - GoogleMaps (= 4.0.0)
+  - GooglePlaces (= 4.0.0)
   - ImageLoader
   - Moya
   - SwiftKeychainWrapper
@@ -19,6 +28,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GoogleMaps
+    - GooglePlaces
     - ImageLoader
     - Moya
     - SwiftKeychainWrapper
@@ -26,11 +37,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
+  GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   ImageLoader: e0635d52020d64dc7687e3a3b14dc53212ac0442
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: 205af1cf73357a0f9c1d94bbe5b3810dc31a7992
+PODFILE CHECKSUM: 44e6ae7d7fb4db57391fc267b325e6580185e94e
 
 COCOAPODS: 1.9.3
