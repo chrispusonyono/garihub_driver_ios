@@ -26,6 +26,7 @@
                 <outlet property="settingsTxt" destination="Hob-ld-AFw" id="DH6-CR-Iqc"/>
                 <outlet property="stateBar" destination="3EO-4r-wat" id="kWx-GH-NoX"/>
                 <outlet property="summaryTxt" destination="gOX-Ix-mqg" id="prD-8u-s3I"/>
+                <outlet property="toggleText" destination="S8x-FV-r2f" id="iaJ-Cr-NdJ"/>
                 <outlet property="tripsTxt" destination="FVG-cj-oEX" id="Btv-EO-usn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -214,7 +215,7 @@
                                                 <constraint firstAttribute="width" id="rjB-Au-2LQ"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rab-a8-Sr8">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently Offline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rab-a8-Sr8">
                                             <rect key="frame" x="32" y="0.0" width="327.5" height="55"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -229,7 +230,7 @@
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3h2-pP-UZ3" userLabel="Middle">
                                             <rect key="frame" x="10" y="21.5" width="12" height="12"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="4Ba-1Y-GSr"/>
                                                 <constraint firstAttribute="width" secondItem="3h2-pP-UZ3" secondAttribute="height" multiplier="1:1" id="YNF-6z-Sc9"/>

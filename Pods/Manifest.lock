@@ -13,6 +13,7 @@ PODS:
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - SwiftKeychainWrapper (3.4.0)
+  - Toast-Swift (4.0.1)
   - XCoordinator (2.0.7):
     - XCoordinator/Core (= 2.0.7)
   - XCoordinator/Core (2.0.7)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - ImageLoader
   - Moya
   - SwiftKeychainWrapper
+  - Toast-Swift (~> 4.0.0)
   - XCoordinator
 
 SPEC REPOS:
@@ -33,6 +35,7 @@ SPEC REPOS:
     - ImageLoader
     - Moya
     - SwiftKeychainWrapper
+    - Toast-Swift
     - XCoordinator
 
 SPEC CHECKSUMS:
@@ -42,8 +45,9 @@ SPEC CHECKSUMS:
   ImageLoader: e0635d52020d64dc7687e3a3b14dc53212ac0442
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: 44e6ae7d7fb4db57391fc267b325e6580185e94e
+PODFILE CHECKSUM: b85e696779157813d125e672c6192d264ae89de8
 
 COCOAPODS: 1.9.3

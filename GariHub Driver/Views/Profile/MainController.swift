@@ -8,12 +8,14 @@
 
 import UIKit
 import ImageLoader
+import Toast_Swift
 
 class MainController: UIViewController {
     
     var viewModel: ViewModel?
-    var shown = false
+    var shown = true
     
+    @IBOutlet weak var toggleText: UILabel!
     @IBOutlet weak var stateBar: UIView!
     @IBOutlet weak var dropDownToggle: UIImageView!
     @IBOutlet weak var profileTxt: UILabel!
@@ -48,7 +50,7 @@ class MainController: UIViewController {
         let login = UITapGestureRecognizer(target: self, action: #selector(self.goToLogin(_:)))
         let notAvailable = UITapGestureRecognizer(target: self, action: #selector(self.unAvailable(_:)))
         let Profile = UITapGestureRecognizer(target: self, action: #selector(self.unAvailable(_:)))
-        let toggle = UITapGestureRecognizer(target: self, action: #selector(self.toggleState(_:)))
+        let showHide = UITapGestureRecognizer(target: self, action: #selector(self.dropDownFunc(_:)))
         let goOnlineOffline = UITapGestureRecognizer(target: self, action: #selector(self.changeDriverState(_:)))
         
         closeNavigationMenu.addGestureRecognizer(dashboard)
@@ -75,11 +77,11 @@ class MainController: UIViewController {
         logoutTxt.addGestureRecognizer(login)
         logoutTxt.isUserInteractionEnabled = true
         
-        dropDownToggle.addGestureRecognizer(toggle)
+        dropDownToggle.addGestureRecognizer(showHide)
         dropDownToggle.isUserInteractionEnabled = true
         
-        stateBar.addGestureRecognizer(goOnlineOffline)
-        stateBar.isUserInteractionEnabled = true
+        toggleText.addGestureRecognizer(goOnlineOffline)
+        toggleText.isUserInteractionEnabled = true
         
         email.text = viewModel?.email
         number.text = viewModel?.mobile
@@ -92,17 +94,30 @@ class MainController: UIViewController {
     @objc func goToDashboard(_ sender: UITapGestureRecognizer) {
         self.viewModel?.router.trigger(.dashboard)
     }
+    
+    @objc func dropDownFunc(_ sender: UITapGestureRecognizer) {
+           if(self.shown) {
+               self.stateBar.frame.size.height = 0
+           }else{
+               self.stateBar.frame.size.height = 50
+           }
+           self.shown = !self.shown
+        showLoading(load: shown)
+       }
+    
     @objc func goToLogin(_ sender: UITapGestureRecognizer) {
         self.viewModel?.router.trigger(.login)
     }
-    @objc func toggleState(_ sender: UITapGestureRecognizer){
-        self.stateBar.isHidden = shown
-        shown = !shown
-    }
     
+    func showLoading(load:Bool) -> Void {
+        if load{
+            self.view.makeToastActivity(.center)}
+        else{
+            self.view.hideToastActivity()
+        }
+    }
     @objc func changeDriverState(_ sender: UITapGestureRecognizer){
-        
-        
+        showLoading(load: true)
     }
     @objc func unAvailable(_ sender: UITapGestureRecognizer) {
         let alertController = UIAlertController(title: "Info", message: "The page is not available", preferredStyle: .alert)

@@ -38,7 +38,8 @@ class LoginController: UIViewController {
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
-                self.viewModel?.router.trigger(.profile(fullName: "Chrispus Onyono",email: email,mobile: "0700824555"))
+                self.viewModel?.router.trigger(.dashboard)
+                //self.viewModel?.router.trigger(.profile(fullName: "Chrispus Onyono",email: email,mobile: "0700824555"))
             case .success(let response):
                 
                 do {
@@ -51,7 +52,8 @@ class LoginController: UIViewController {
                 }
                 catch {
                     if(true){
-                    self.viewModel?.router.trigger(.profile(fullName: "Chrispus Onyono",email: email,mobile: "0700824555"))
+                        self.viewModel?.router.trigger(.dashboard)
+                    //self.viewModel?.router.trigger(.profile(fullName: "Chrispus Onyono",email: email,mobile: "0700824555"))
                         return                        
                     }
                     DispatchQueue.main.async {

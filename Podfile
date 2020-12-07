@@ -12,6 +12,7 @@ target 'GariHub Driver' do
   pod 'ImageLoader'
   pod 'GoogleMaps', '4.0.0'
   pod 'GooglePlaces', '4.0.0'
+  pod 'Toast-Swift', '~> 4.0.0'
 
   target 'GariHub DriverTests' do
     inherit! :search_paths
