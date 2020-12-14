@@ -14,7 +14,10 @@ class MainController: UIViewController {
     
     var viewModel: ViewModel?
     var shown = true
-    
+    var online = false
+    @IBOutlet weak var stateColor: UIView!
+    @IBOutlet weak var displayColor: UIView!
+    @IBOutlet weak var displayText: UILabel!
     @IBOutlet weak var toggleText: UILabel!
     @IBOutlet weak var stateBar: UIView!
     @IBOutlet weak var dropDownToggle: UIImageView!
@@ -102,7 +105,8 @@ class MainController: UIViewController {
                self.stateBar.frame.size.height = 50
            }
            self.shown = !self.shown
-        showLoading(load: shown)
+        
+        
        }
     
     @objc func goToLogin(_ sender: UITapGestureRecognizer) {
@@ -118,6 +122,7 @@ class MainController: UIViewController {
     }
     @objc func changeDriverState(_ sender: UITapGestureRecognizer){
         showLoading(load: true)
+        stateTo(online: online)
     }
     @objc func unAvailable(_ sender: UITapGestureRecognizer) {
         let alertController = UIAlertController(title: "Info", message: "The page is not available", preferredStyle: .alert)
@@ -141,7 +146,19 @@ class MainController: UIViewController {
         mobile.attributedText = highLight(with: "0700000000", targetString: "Or call our 24/7 Customer Care 0700000000")
     }
     
-    
+    func stateTo(online: Bool){
+        if(online){
+            displayText.text = "Currently Offline"
+            toggleText.text = "Online"
+            stateColor.backgroundColor = UIColor.systemYellow
+            displayColor.backgroundColor = UIColor.systemGray
+        }else{
+            displayText.text = "Currently Online"
+            toggleText.text = "Offline"
+            stateColor.backgroundColor = UIColor.systemGray
+            displayColor.backgroundColor = UIColor.systemYellow
+        }
+    }
     func highLight(with searchTerm: String, targetString: String) -> NSAttributedString? {
 
         let attributedString = NSMutableAttributedString(string: targetString)

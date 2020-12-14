@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainController" customModule="GariHub_Driver" customModuleProvider="target">
             <connections>
                 <outlet property="closeNavigationMenu" destination="pwb-Gs-1to" id="vve-Sr-5vP"/>
+                <outlet property="displayColor" destination="3h2-pP-UZ3" id="nkG-53-w8S"/>
+                <outlet property="displayText" destination="rab-a8-Sr8" id="ir8-0n-XkJ"/>
                 <outlet property="dropDownToggle" destination="twi-Wi-lJN" id="4yT-Vo-bjG"/>
                 <outlet property="earningsTxt" destination="N1A-CX-ASN" id="t6A-ja-tpQ"/>
                 <outlet property="email" destination="fSk-AO-Qd4" id="I7g-cU-8GM"/>
@@ -25,6 +27,7 @@
                 <outlet property="profileTxt" destination="Jw4-nY-HP7" id="mhh-za-ts7"/>
                 <outlet property="settingsTxt" destination="Hob-ld-AFw" id="DH6-CR-Iqc"/>
                 <outlet property="stateBar" destination="3EO-4r-wat" id="kWx-GH-NoX"/>
+                <outlet property="stateColor" destination="p4S-ew-hSP" id="Dgu-Xk-eVp"/>
                 <outlet property="summaryTxt" destination="gOX-Ix-mqg" id="prD-8u-s3I"/>
                 <outlet property="toggleText" destination="S8x-FV-r2f" id="iaJ-Cr-NdJ"/>
                 <outlet property="tripsTxt" destination="FVG-cj-oEX" id="Btv-EO-usn"/>

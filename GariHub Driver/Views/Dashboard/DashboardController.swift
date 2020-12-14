@@ -13,6 +13,7 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
     var viewModel: DashboardViewModel?
 
     @IBOutlet weak var navigationDrawer: UIImageView!
+    @IBOutlet weak var goOnlineBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,11 +30,21 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
 
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
-        
+        goOnlineBtn.isHidden = true
+        navigationDrawer.isHidden = true
         
     }
     @IBAction func goOnline(_ sender: Any) {
         askPermissionFirst()
+    }
+    private func connectWithSockets(){
+        
+    }
+    private func showRiderRequest(){
+        
+    }
+    private func showOnlinepPop(){
+        
     }
     func askPermissionFirst(){
     if !hasLocationPermission() {

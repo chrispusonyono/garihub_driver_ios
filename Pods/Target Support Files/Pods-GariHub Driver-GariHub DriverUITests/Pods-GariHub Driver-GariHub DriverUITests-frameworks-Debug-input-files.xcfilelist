@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-GariHub Driver-GariHub DriverUITests/Pods
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/ImageLoader/ImageLoader.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/StarryStars/StarryStars.framework
 ${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework
 ${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework
 ${BUILT_PRODUCTS_DIR}/XCoordinator/XCoordinator.framework

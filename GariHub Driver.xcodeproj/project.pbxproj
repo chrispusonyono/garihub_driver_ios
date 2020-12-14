@@ -21,10 +21,13 @@
 		0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */; };
 		0C4242F4254C4D0600F244AA /* PasswordRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */; };
 		0C4242F5254C4D0600F244AA /* PasswordRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */; };
+		0CC61A1325865B69007EDDDA /* GoOnlinePopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CC61A1225865B66007EDDDA /* GoOnlinePopupController.xib */; };
 		0CED11A0257E326C00D55655 /* RiderRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED119E257E326C00D55655 /* RiderRequestController.swift */; };
 		0CED11A1257E326C00D55655 /* RiderRequestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CED119F257E326C00D55655 /* RiderRequestController.xib */; };
 		0CED11A5257E332500D55655 /* RateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED11A3257E332500D55655 /* RateController.swift */; };
 		0CED11A6257E332500D55655 /* RateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CED11A4257E332500D55655 /* RateController.xib */; };
+		0CED11AC257E3BB400D55655 /* GoOnlinePopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED11AA257E3BB400D55655 /* GoOnlinePopupController.swift */; };
+		0CED11B0258138B100D55655 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED11AE258138B100D55655 /* EditProfileController.swift */; };
 		0CF160EA253E049D00250C6F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160E8253E049D00250C6F /* LoginController.swift */; };
 		0CF160EB253E049D00250C6F /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF160E9253E049D00250C6F /* LoginController.xib */; };
 		0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160ED253E060A00250C6F /* AccountInfoController.swift */; };
@@ -90,11 +93,15 @@
 		0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailRegistrationController.xib; sourceTree = "<group>"; };
 		0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRegisterController.swift; sourceTree = "<group>"; };
 		0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordRegisterController.xib; sourceTree = "<group>"; };
+		0CC61A1225865B66007EDDDA /* GoOnlinePopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoOnlinePopupController.xib; sourceTree = "<group>"; };
 		0CE3ED3A85DABFE40BDA4F15 /* Pods_GariHub_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GariHub_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CED119E257E326C00D55655 /* RiderRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderRequestController.swift; sourceTree = "<group>"; };
 		0CED119F257E326C00D55655 /* RiderRequestController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiderRequestController.xib; sourceTree = "<group>"; };
 		0CED11A3257E332500D55655 /* RateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateController.swift; sourceTree = "<group>"; };
 		0CED11A4257E332500D55655 /* RateController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateController.xib; sourceTree = "<group>"; };
+		0CED11AA257E3BB400D55655 /* GoOnlinePopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoOnlinePopupController.swift; sourceTree = "<group>"; };
+		0CED11AE258138B100D55655 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		0CED11B225813DED00D55655 /* EditProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileController.xib; sourceTree = "<group>"; };
 		0CF160E8253E049D00250C6F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		0CF160E9253E049D00250C6F /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		0CF160ED253E060A00250C6F /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
@@ -224,8 +231,19 @@
 		0CED11A7257E336B00D55655 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
+				0CED11B225813DED00D55655 /* EditProfileController.xib */,
+				0CED11AE258138B100D55655 /* EditProfileController.swift */,
 			);
 			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		0CED11A9257E3B6900D55655 /* GoOnline */ = {
+			isa = PBXGroup;
+			children = (
+				0CED11AA257E3BB400D55655 /* GoOnlinePopupController.swift */,
+				0CC61A1225865B66007EDDDA /* GoOnlinePopupController.xib */,
+			);
+			path = GoOnline;
 			sourceTree = "<group>";
 		};
 		0CF160E3253E038B00250C6F /* Login */ = {
@@ -331,6 +349,7 @@
 		FAA769EC2514D4CC00750625 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CED11A9257E3B6900D55655 /* GoOnline */,
 				0CED11A7257E336B00D55655 /* EditProfile */,
 				0CED11A2257E32E100D55655 /* RateRider */,
 				0CED1199257E2D4300D55655 /* RiderRequest */,
@@ -507,6 +526,7 @@
 				0CF160EB253E049D00250C6F /* LoginController.xib in Resources */,
 				FAA769F02514D50E00750625 /* LandingController.xib in Resources */,
 				0C4242F5254C4D0600F244AA /* PasswordRegisterController.xib in Resources */,
+				0CC61A1325865B69007EDDDA /* GoOnlinePopupController.xib in Resources */,
 				0C4242E9254C399A00F244AA /* RegistrationController.xib in Resources */,
 				FAA769C62514D49200750625 /* Assets.xcassets in Resources */,
 				0CED11A1257E326C00D55655 /* RiderRequestController.xib in Resources */,
@@ -680,6 +700,8 @@
 				FAA8B1E5254FFE01001484E7 /* BaseAuthModel.swift in Sources */,
 				FAA8B2042550650F001484E7 /* DashboardViewModel.swift in Sources */,
 				0CED11A5257E332500D55655 /* RateController.swift in Sources */,
+				0CED11B0258138B100D55655 /* EditProfileController.swift in Sources */,
+				0CED11AC257E3BB400D55655 /* GoOnlinePopupController.swift in Sources */,
 				0C4242EC254C499000F244AA /* RegistrationTwoController.swift in Sources */,
 				FAA8B1FD255057D5001484E7 /* LoginResponse.swift in Sources */,
 				FAA8B1FB25504006001484E7 /* LoginViewModel.swift in Sources */,
