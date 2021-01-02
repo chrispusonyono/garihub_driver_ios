@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardController" customModule="GariHub_Driver" customModuleProvider="target">
             <connections>
+                <outlet property="goOnlineBtn" destination="aQJ-FL-66f" id="mKH-3Y-fgS"/>
                 <outlet property="navigationDrawer" destination="bKA-3Q-3iu" id="79p-LY-FnK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,15 +20,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MP2-iU-w9L">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MP2-iU-w9L">
                     <rect key="frame" x="0.0" y="44" width="574" height="268"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseline_menu_black_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="bKA-3Q-3iu">
                             <rect key="frame" x="8" y="8" width="66" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-N9-5A2">
-                            <rect key="frame" x="20" y="114.5" width="518.5" height="153.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-N9-5A2">
+                            <rect key="frame" x="20" y="114.5" width="518.5" height="513.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Chrispus!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-J1-5Ed">
                                     <rect key="frame" x="0.0" y="0.0" width="228" height="30"/>

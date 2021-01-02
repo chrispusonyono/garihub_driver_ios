@@ -15,11 +15,15 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
+    @IBOutlet weak var forgotPassword: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         signInBtn.addTarget(self, action: #selector(self.onTap(_:)), for: .touchUpInside)
+        
+        let resertPassAction = UITapGestureRecognizer(target: self, action: #selector(self.resetPassword(_:)))
+        forgotPassword.addGestureRecognizer(resertPassAction)
     }
     
     @objc func onTap(_ sender: UIButton) {
@@ -124,6 +128,21 @@ class LoginController: UIViewController {
         
         
     }
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
+   @objc func resetPassword(_ sender: UITapGestureRecognizer) {
+        let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addFuelpopUp") as! ResetController
+    self.addChild(popup)
+        popup.view.frame = self.view.frame
+        self.view.addSubview(popup.view)
+    popup.didMove(toParent: self)
+    }
 }

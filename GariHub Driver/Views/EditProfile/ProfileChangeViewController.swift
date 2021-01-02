@@ -1,15 +1,15 @@
 //
-//  EditProfileController.swift
+//  ProfileChangeViewController.swift
 //  GariHub Driver
 //
-//  Created by Chrispus Onyono on 09/12/2020.
+//  Created by Chrispus Onyono on 21/12/2020.
 //  Copyright © 2020 Kevin Lagat. All rights reserved.
 //
 
 import UIKit
 import ImagePicker
 import ImageLoader
-class EditProfileController: UIViewController, ImagePickerDelegate, UITextFieldDelegate {
+class ProfileChangeViewController: UIViewController, ImagePickerDelegate, UITextFieldDelegate {
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
         if (images.count>0){

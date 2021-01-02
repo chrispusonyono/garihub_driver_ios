@@ -10,6 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RiderRequestController" customModule="GariHub_Driver" customModuleProvider="target">
             <connections>
+                <outlet property="accept" destination="0KO-O4-nVw" id="BAg-2S-ihp"/>
+                <outlet property="endTrip" destination="xnA-oa-AQr" id="EJ6-mf-eM5"/>
+                <outlet property="iHaveArrived" destination="a8y-dY-5OP" id="t2Y-8U-ghx"/>
+                <outlet property="profileImage" destination="UIW-xf-P5T" id="Udu-QH-PXK"/>
+                <outlet property="reject" destination="XAr-g7-iul" id="2PV-4Q-aqz"/>
+                <outlet property="startTrip" destination="FhI-mb-Mtt" id="Y7t-Rb-YQR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -116,6 +122,9 @@
                                     <state key="normal" title="ACCEPT RIDE">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="acceptRideFromRider:" destination="-1" eventType="touchUpInside" id="9Bm-hA-UQ5"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAr-g7-iul">
                                     <rect key="frame" x="253.5" y="25" width="135.5" height="65"/>
@@ -124,15 +133,57 @@
                                         <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8y-dY-5OP">
+                                    <rect key="frame" x="25" y="25" width="364" height="65"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="I HAVE ARRIVED">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="ihaveArrived:" destination="-1" eventType="touchUpInside" id="9aa-K2-RdX"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnA-oa-AQr">
+                                    <rect key="frame" x="25" y="25" width="364" height="65"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="SWIPE TO END RIDE  &gt;&gt;">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="swipeToEnd:" destination="-1" eventType="touchUpInside" id="NFF-d4-fek"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhI-mb-Mtt">
+                                    <rect key="frame" x="25" y="25" width="364" height="65"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="SWIPE TO START RIDE  &gt;&gt;">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="swipeToStart:" destination="-1" eventType="touchUpInside" id="Gqm-fl-vnz"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="FhI-mb-Mtt" secondAttribute="trailing" constant="25" id="291-oy-05M"/>
                                 <constraint firstItem="0KO-O4-nVw" firstAttribute="top" secondItem="zue-5I-cqT" secondAttribute="top" constant="25" id="997-fc-BMz"/>
+                                <constraint firstItem="xnA-oa-AQr" firstAttribute="top" secondItem="zue-5I-cqT" secondAttribute="top" constant="25" id="GTd-0t-KMb"/>
                                 <constraint firstAttribute="bottom" secondItem="0KO-O4-nVw" secondAttribute="bottom" constant="25" id="GmE-ba-wmU"/>
+                                <constraint firstAttribute="trailing" secondItem="a8y-dY-5OP" secondAttribute="trailing" constant="25" id="KhD-y3-QpT"/>
+                                <constraint firstItem="FhI-mb-Mtt" firstAttribute="leading" secondItem="zue-5I-cqT" secondAttribute="leading" constant="25" id="OFB-JY-7cT"/>
+                                <constraint firstAttribute="trailing" secondItem="xnA-oa-AQr" secondAttribute="trailing" constant="25" id="OGE-B9-ibx"/>
                                 <constraint firstItem="XAr-g7-iul" firstAttribute="leading" secondItem="0KO-O4-nVw" secondAttribute="trailing" constant="25" id="PFt-hR-BEK"/>
+                                <constraint firstItem="FhI-mb-Mtt" firstAttribute="top" secondItem="zue-5I-cqT" secondAttribute="top" constant="25" id="Srl-Eo-mCZ"/>
+                                <constraint firstAttribute="bottom" secondItem="FhI-mb-Mtt" secondAttribute="bottom" constant="25" id="Tzu-2b-fH1"/>
+                                <constraint firstAttribute="bottom" secondItem="a8y-dY-5OP" secondAttribute="bottom" constant="25" id="Yxk-Mb-MaO"/>
+                                <constraint firstItem="a8y-dY-5OP" firstAttribute="top" secondItem="zue-5I-cqT" secondAttribute="top" constant="25" id="awC-Q0-mUe"/>
+                                <constraint firstItem="xnA-oa-AQr" firstAttribute="leading" secondItem="zue-5I-cqT" secondAttribute="leading" constant="25" id="hGE-yY-0T1"/>
+                                <constraint firstItem="a8y-dY-5OP" firstAttribute="leading" secondItem="zue-5I-cqT" secondAttribute="leading" constant="25" id="ox3-eg-r6H"/>
                                 <constraint firstAttribute="trailing" secondItem="XAr-g7-iul" secondAttribute="trailing" constant="25" id="pIr-g3-8cU"/>
                                 <constraint firstItem="0KO-O4-nVw" firstAttribute="leading" secondItem="zue-5I-cqT" secondAttribute="leading" constant="25" id="rNH-Pp-423"/>
                                 <constraint firstItem="XAr-g7-iul" firstAttribute="top" secondItem="zue-5I-cqT" secondAttribute="top" constant="25" id="u3P-0b-xDG"/>
+                                <constraint firstAttribute="bottom" secondItem="xnA-oa-AQr" secondAttribute="bottom" constant="25" id="uoD-py-0KF"/>
                                 <constraint firstAttribute="bottom" secondItem="XAr-g7-iul" secondAttribute="bottom" constant="25" id="vXo-Mo-OL6"/>
                                 <constraint firstItem="XAr-g7-iul" firstAttribute="width" secondItem="0KO-O4-nVw" secondAttribute="width" multiplier="2:3" id="zCg-0V-4yz"/>
                             </constraints>
@@ -162,7 +213,7 @@
                 <constraint firstAttribute="bottom" secondItem="zI0-DH-bv8" secondAttribute="bottom" id="pdl-XM-Ea6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="1124.6376811594205" y="-42.1875"/>
+            <point key="canvasLocation" x="-262" y="-60"/>
         </view>
     </objects>
     <resources>

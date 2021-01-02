@@ -9,6 +9,7 @@
 import UIKit
 import ImageLoader
 import Toast_Swift
+import PopupDialog
 
 class MainController: UIViewController {
     
@@ -52,7 +53,7 @@ class MainController: UIViewController {
         let dashboard = UITapGestureRecognizer(target: self, action: #selector(self.goToDashboard(_:)))
         let login = UITapGestureRecognizer(target: self, action: #selector(self.goToLogin(_:)))
         let notAvailable = UITapGestureRecognizer(target: self, action: #selector(self.unAvailable(_:)))
-        let Profile = UITapGestureRecognizer(target: self, action: #selector(self.unAvailable(_:)))
+        let editUserProfile = UITapGestureRecognizer(target: self, action: #selector(self.editProfileIcon(_:)))
         let showHide = UITapGestureRecognizer(target: self, action: #selector(self.dropDownFunc(_:)))
         let goOnlineOffline = UITapGestureRecognizer(target: self, action: #selector(self.changeDriverState(_:)))
         
@@ -86,6 +87,9 @@ class MainController: UIViewController {
         toggleText.addGestureRecognizer(goOnlineOffline)
         toggleText.isUserInteractionEnabled = true
         
+        profileImage.addGestureRecognizer(editUserProfile)
+        profileImage.isUserInteractionEnabled = true
+        
         email.text = viewModel?.email
         number.text = viewModel?.mobile
         fullName.text = viewModel?.fullName
@@ -95,8 +99,11 @@ class MainController: UIViewController {
     
     
     @objc func goToDashboard(_ sender: UITapGestureRecognizer) {
-        self.viewModel?.router.trigger(.dashboard)
-    }
+           self.viewModel?.router.trigger(.dashboard)
+       }
+    @objc func editProfileIcon(_ sender: UITapGestureRecognizer) {
+              editProfile()
+          }
     
     @objc func dropDownFunc(_ sender: UITapGestureRecognizer) {
            if(self.shown) {
@@ -105,7 +112,6 @@ class MainController: UIViewController {
                self.stateBar.frame.size.height = 50
            }
            self.shown = !self.shown
-        
         
        }
     
@@ -119,6 +125,85 @@ class MainController: UIViewController {
         else{
             self.view.hideToastActivity()
         }
+    }
+    private func editProfile() {
+        let profileEdit = ProfileChangeViewController(nibName: "ProfileChangeViewController", bundle: nil)
+        
+    
+        
+        
+        let popup = PopupDialog(viewController: profileEdit,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .bounceDown,
+                                preferredWidth: 580,
+                                tapGestureDismissal: false,
+                                panGestureDismissal: false,
+                                hideStatusBar: true,
+                                completion:  nil)
+        
+        let buttonOne = CancelButton(title: "CANCEL", height: 60) {
+        }
+        let buttonTwo = DefaultButton(title: "SAVE", height: 60) {
+           // self.fullName.text = profileEdit.fullName.text
+           // self.profileImage.image = profileEdit.profilePicture.image
+           // self.view.makeToastActivity(.center)
+//            let parameters = [
+//                "action": "changeProfile",
+//                "token": UserDefaults.standard.string(forKey: "token") ?? "",
+//                "fullName": self.fullName.text ?? ""
+//            ]
+//            Alamofire.upload(multipartFormData: { multipartFormData in
+//                
+//                multipartFormData.append(self.profilePicture.image!.jpegData(compressionQuality: 0.75)!, withName: "icon",fileName: "file.jpg", mimeType: "image/jpg")
+//                
+//                for (key, value) in parameters {
+//                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+//                }
+//            },
+//                             to:Constant.URLS.PROJECT)
+//            { (result) in
+//                
+//                switch result {
+//                case .success(let upload, _, _):
+//                    
+//                    upload.uploadProgress(closure: { (progress) in
+//                        print("Upload Progress: \(progress.fractionCompleted)")
+//                    })
+//                    
+//                    upload.responseJSON { response in
+//                        self.view.hideToastActivity()
+//                        print(response)
+//                        let dataIn = response.result.value as! NSDictionary
+//                        if((dataIn.value(forKey: "status") as! Bool)){
+//                            print(dataIn)
+//                            let profileData = dataIn.value(forKey: "profile") as! NSDictionary
+//                            let token = profileData.value(forKey: "token") as! String
+//                            let fullName = profileData.value(forKey: "fullName") as! String
+//                            let email = profileData.value(forKey: "email") as! String
+//                            let profilePicture = profileData.value(forKey: "profilePicture") as! String
+//                            let profile = Profile(loggedIn: true, token: token, fullName: fullName, email: email, profilePicture: profilePicture)
+//                            Constant.FUNCTIONS.setUserProfile(profile: profile)
+//                            self.view.makeToast("Profile Updated successfully")
+//                            
+//                        }else{
+//                            self.fullName.text=self.session.string(forKey: "fullName")
+//                            self.profilePicture.load.request(with: self.session.string(forKey: "profilePicture") ?? "")
+//                            let alert = UIAlertController(title: "Error", message: dataIn.value(forKey: "message") as? String, preferredStyle: UIAlertController.Style.alert)
+//                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+//                            self.present(alert, animated: true, completion: nil)
+//                        }
+//                    }
+//                case .failure(let encodingError):
+//                    print(encodingError)
+//                }
+//            }
+            
+            
+            
+        }
+        
+        popup.addButtons([buttonOne, buttonTwo])
+        self.present(popup, animated: true, completion: nil)
     }
     @objc func changeDriverState(_ sender: UITapGestureRecognizer){
         showLoading(load: true)

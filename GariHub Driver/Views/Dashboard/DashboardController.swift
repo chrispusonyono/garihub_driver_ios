@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import GoogleMaps
 class DashboardController: UIViewController, CLLocationManagerDelegate {
     var rejected = false
     var viewModel: DashboardViewModel?
@@ -25,17 +26,19 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
         navigationDrawer.addGestureRecognizer(Profile)
         navigationDrawer.isUserInteractionEnabled = true
         
-        let alertController = UIAlertController(title: "Error", message: "Invalid map configuration", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        //let alertController = UIAlertController(title: "Error", message: "Invalid map configuration", preferredStyle: .alert)
+//     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
 
-        alertController.addAction(defaultAction)
-        self.present(alertController, animated: true, completion: nil)
-        goOnlineBtn.isHidden = true
-        navigationDrawer.isHidden = true
+  //      alertController.addAction(defaultAction)
+        //self.present(alertController, animated: true, completion: nil)
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        //view = mapView
         
     }
     @IBAction func goOnline(_ sender: Any) {
         askPermissionFirst()
+        self.viewModel?.router.trigger(.riderRequest)
     }
     private func connectWithSockets(){
         

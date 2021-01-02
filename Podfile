@@ -6,6 +6,7 @@ target 'GariHub Driver' do
   use_frameworks!
 
   # Pods for GariHub Driver
+  pod 'ImagePicker'
   pod 'Moya'
   pod 'SwiftKeychainWrapper'
   pod 'XCoordinator'
@@ -13,7 +14,8 @@ target 'GariHub Driver' do
   pod 'GoogleMaps', '4.0.0'
   pod 'GooglePlaces', '4.0.0'
   pod 'Toast-Swift', '~> 4.0.0'
-  pod 'StarryStars', '~> 1.0.0'
+  #pod 'StarryStars', '~> 1.0.0'
+  pod 'PopupDialog', '~> 0.9'
 
   target 'GariHub DriverTests' do
     inherit! :search_paths
