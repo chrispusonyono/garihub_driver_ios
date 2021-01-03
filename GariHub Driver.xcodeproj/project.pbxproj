@@ -29,7 +29,6 @@
 		0CED11A5257E332500D55655 /* RateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED11A3257E332500D55655 /* RateController.swift */; };
 		0CED11A6257E332500D55655 /* RateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CED11A4257E332500D55655 /* RateController.xib */; };
 		0CED11AC257E3BB400D55655 /* GoOnlinePopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED11AA257E3BB400D55655 /* GoOnlinePopupController.swift */; };
-		0CED11B0258138B100D55655 /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED11AE258138B100D55655 /* EditProfileController.swift */; };
 		0CF160EA253E049D00250C6F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160E8253E049D00250C6F /* LoginController.swift */; };
 		0CF160EB253E049D00250C6F /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF160E9253E049D00250C6F /* LoginController.xib */; };
 		0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF160ED253E060A00250C6F /* AccountInfoController.swift */; };
@@ -104,8 +103,6 @@
 		0CED11A3257E332500D55655 /* RateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateController.swift; sourceTree = "<group>"; };
 		0CED11A4257E332500D55655 /* RateController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateController.xib; sourceTree = "<group>"; };
 		0CED11AA257E3BB400D55655 /* GoOnlinePopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoOnlinePopupController.swift; sourceTree = "<group>"; };
-		0CED11AE258138B100D55655 /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
-		0CED11B225813DED00D55655 /* EditProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileController.xib; sourceTree = "<group>"; };
 		0CF160E8253E049D00250C6F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		0CF160E9253E049D00250C6F /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		0CF160ED253E060A00250C6F /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
@@ -235,8 +232,6 @@
 		0CED11A7257E336B00D55655 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
-				0CED11B225813DED00D55655 /* EditProfileController.xib */,
-				0CED11AE258138B100D55655 /* EditProfileController.swift */,
 				0C1B6D3925913BA3004061D4 /* ProfileChangeViewController.swift */,
 				0C1B6D3A25913BA3004061D4 /* ProfileChangeViewController.xib */,
 			);
@@ -487,7 +482,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1160;
-				ORGANIZATIONNAME = "Kevin Lagat";
+				ORGANIZATIONNAME = "Garihub Developers";
 				TargetAttributes = {
 					FAA769B82514D49000750625 = {
 						CreatedOnToolsVersion = 11.6;
@@ -707,7 +702,6 @@
 				FAA8B1E5254FFE01001484E7 /* BaseAuthModel.swift in Sources */,
 				FAA8B2042550650F001484E7 /* DashboardViewModel.swift in Sources */,
 				0CED11A5257E332500D55655 /* RateController.swift in Sources */,
-				0CED11B0258138B100D55655 /* EditProfileController.swift in Sources */,
 				0CED11AC257E3BB400D55655 /* GoOnlinePopupController.swift in Sources */,
 				0C4242EC254C499000F244AA /* RegistrationTwoController.swift in Sources */,
 				FAA8B1FD255057D5001484E7 /* LoginResponse.swift in Sources */,

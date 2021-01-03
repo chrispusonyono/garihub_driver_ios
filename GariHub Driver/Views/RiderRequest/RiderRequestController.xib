@@ -15,6 +15,7 @@
                 <outlet property="iHaveArrived" destination="a8y-dY-5OP" id="t2Y-8U-ghx"/>
                 <outlet property="profileImage" destination="UIW-xf-P5T" id="Udu-QH-PXK"/>
                 <outlet property="reject" destination="XAr-g7-iul" id="2PV-4Q-aqz"/>
+                <outlet property="requestHolder" destination="zI0-DH-bv8" id="Vca-oI-JmA"/>
                 <outlet property="startTrip" destination="FhI-mb-Mtt" id="Y7t-Rb-YQR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -74,7 +75,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starryStars_on.png" translatesAutoresizingMaskIntoConstraints="NO" id="inC-zC-9ux">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_star_rate_white_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="inC-zC-9ux">
                                     <rect key="frame" x="328" y="10" width="20" height="95"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="Vq6-yc-BO9"/>
@@ -218,6 +219,6 @@
     </objects>
     <resources>
         <image name="baseline_place_white_48pt" width="48" height="48"/>
-        <image name="starryStars_on.png" width="35" height="35"/>
+        <image name="baseline_star_rate_white_48pt" width="48" height="48"/>
     </resources>
 </document>

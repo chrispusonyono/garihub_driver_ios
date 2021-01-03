@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PopupDialog
 class LoginController: UIViewController {
     
     var viewModel: LoginViewModel?
@@ -15,7 +15,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
-    @IBOutlet weak var forgotPassword: UITextView!
+    @IBOutlet weak var forgotPassword: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,10 +139,18 @@ class LoginController: UIViewController {
     }
     
    @objc func resetPassword(_ sender: UITapGestureRecognizer) {
-        let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addFuelpopUp") as! ResetController
+//    let popup = ProfileChangeViewController(nibName: "ProfileChangeViewController", bundle: nil)
+//    self.addChild(popup)
+//        popup.view.frame = self.view.frame
+//        self.view.addSubview(popup.view)
+//    popup.didMove(toParent: self)
+    
+    let popup = ResetController(nibName: "ResetController", bundle: nil)
     self.addChild(popup)
         popup.view.frame = self.view.frame
         self.view.addSubview(popup.view)
     popup.didMove(toParent: self)
+   
     }
+    
 }

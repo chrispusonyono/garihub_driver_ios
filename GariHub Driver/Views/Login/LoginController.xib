@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="GariHub_Driver" customModuleProvider="target">
             <connections>
                 <outlet property="emailAddress" destination="Xy3-UB-gMc" id="hZS-fd-qb8"/>
+                <outlet property="forgotPassword" destination="ZBa-QG-06i" id="sAN-i6-Hqm"/>
                 <outlet property="password" destination="xaj-Eq-iG4" id="4k8-jw-4jW"/>
                 <outlet property="signInBtn" destination="Jsn-s7-zwV" id="cnI-6f-6xm"/>
                 <outlet property="view" destination="BOx-wt-Yk4" id="aYz-VO-eZv"/>
@@ -134,7 +135,7 @@
                                 <constraint firstAttribute="height" constant="0.5" id="lsp-PX-XeK"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-QG-06i">
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-QG-06i">
                             <rect key="frame" x="0.0" y="172" width="394" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="SZI-oL-EZL"/>
