@@ -32,7 +32,7 @@ class RiderRequestController: UIViewController {
         
     }
     private func setupUI(){
-        profileImage.makeRounde()
+        profileImage.makeRounded()
     
         
         accept.layer.cornerRadius = 10.0
