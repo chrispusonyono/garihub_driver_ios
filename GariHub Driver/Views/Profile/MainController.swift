@@ -221,12 +221,7 @@ class MainController: UIViewController {
         menus.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
         menus.clipsToBounds = true
 
-        profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
-        profileImage.layer.borderWidth = 2.0;
-        profileImage.contentMode = .scaleAspectFill
-        profileImage.clipsToBounds = true
-        profileImage.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5).cgColor
-        profileImage.layer.masksToBounds = true;
+        profileImage.makeRounded()
         info.attributedText = highLight(with: "www.garihub.com", targetString: "For more information, visit:www.garihub.com")
         mobile.attributedText = highLight(with: "0700000000", targetString: "Or call our 24/7 Customer Care 0700000000")
     }
@@ -271,6 +266,7 @@ class MainController: UIViewController {
        }
 }
 extension UIView{
+    
    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
