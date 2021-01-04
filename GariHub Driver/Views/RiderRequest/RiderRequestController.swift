@@ -32,7 +32,10 @@ class RiderRequestController: UIViewController {
         
     }
     private func setupUI(){
+        profileImage.contentMode = .scaleAspectFill
     
+        
+        profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
         accept.layer.cornerRadius = 10.0
         reject.layer.cornerRadius = 10.0
         iHaveArrived.layer.cornerRadius = 10.0
@@ -41,7 +44,10 @@ class RiderRequestController: UIViewController {
         requestHolder.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
         
         reject.layer.borderWidth = 2.0
+        profileImage.layer.borderWidth = 2.0
         
+        
+        profileImage.clipsToBounds = true
         accept.clipsToBounds = true
         reject.clipsToBounds = true
         iHaveArrived.clipsToBounds = true
@@ -49,14 +55,16 @@ class RiderRequestController: UIViewController {
         startTrip.clipsToBounds = true
         requestHolder.clipsToBounds = true
         
+        profileImage.layer.masksToBounds = true
         accept.layer.masksToBounds = true
         reject.layer.masksToBounds = true
         iHaveArrived.layer.masksToBounds = true
         endTrip.layer.masksToBounds = true
         startTrip.layer.masksToBounds = true
         
-
-        reject.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5).cgColor
+        
+        profileImage.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5).cgColor
+        reject.layer.borderColor = UIColor.systemYellow.cgColor
     }
 
     @IBAction func acceptRideFromRider(_ sender: Any) {
