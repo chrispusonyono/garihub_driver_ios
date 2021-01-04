@@ -78,13 +78,13 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_star_rate_white_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="inC-zC-9ux">
                                     <rect key="frame" x="328" y="10" width="20" height="95"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="20" id="Vq6-yc-BO9"/>
+                                        <constraint firstAttribute="width" constant="20" id="Vq6-yc-BO9" userLabel="width = 25"/>
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_place_white_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="1M9-bB-ztQ">
                                     <rect key="frame" x="115" y="51" width="20" height="20"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="o9b-o3-c28"/>
+                                        <constraint firstAttribute="height" constant="20" id="o9b-o3-c28" userLabel="height = 25"/>
                                         <constraint firstAttribute="width" secondItem="1M9-bB-ztQ" secondAttribute="height" multiplier="1:1" id="rpO-5a-KY8"/>
                                     </constraints>
                                 </imageView>
