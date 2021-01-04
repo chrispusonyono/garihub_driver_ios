@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C05557E25A334960019ACCB /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05557D25A334960019ACCB /* UIImageView+.swift */; };
 		0C1B6D3B25913BA3004061D4 /* ProfileChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B6D3925913BA3004061D4 /* ProfileChangeViewController.swift */; };
 		0C1B6D3C25913BA3004061D4 /* ProfileChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1B6D3A25913BA3004061D4 /* ProfileChangeViewController.xib */; };
 		0C267C422561EC9800EE819E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C267C412561EC9800EE819E /* ViewModel.swift */; };
@@ -81,7 +80,6 @@
 
 /* Begin PBXFileReference section */
 		088C6F29471C3ABE45F99DD8 /* Pods-GariHub DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GariHub DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-GariHub DriverTests/Pods-GariHub DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
-		0C05557D25A334960019ACCB /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		0C1B6D3925913BA3004061D4 /* ProfileChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileChangeViewController.swift; sourceTree = "<group>"; };
 		0C1B6D3A25913BA3004061D4 /* ProfileChangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileChangeViewController.xib; sourceTree = "<group>"; };
 		0C267C412561EC9800EE819E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -399,7 +397,6 @@
 				FAA8B1F2255018D7001484E7 /* UIViewController+.swift */,
 				FAA8B1F4255018F5001484E7 /* ClassNameProtocol.swift */,
 				FAA8B1F625501C5B001484E7 /* UITextField+.swift */,
-				0C05557D25A334960019ACCB /* UIImageView+.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -722,7 +719,6 @@
 				0CF160EA253E049D00250C6F /* LoginController.swift in Sources */,
 				FAA8B1E7254FFE51001484E7 /* GariHubDriverClient.swift in Sources */,
 				FAA8B1F725501C5B001484E7 /* UITextField+.swift in Sources */,
-				0C05557E25A334960019ACCB /* UIImageView+.swift in Sources */,
 				FAA769EF2514D50E00750625 /* LandingController.swift in Sources */,
 				0C1B6D3B25913BA3004061D4 /* ProfileChangeViewController.swift in Sources */,
 				FAA8B20125506343001484E7 /* DashboardController.swift in Sources */,
