@@ -32,10 +32,14 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
 
   //      alertController.addAction(defaultAction)
         //self.present(alertController, animated: true, completion: nil)
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let camera = GMSCameraPosition.camera(withLatitude: -1.102554, longitude: 37.013193, zoom: 10.0)
         let googleMap = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView = googleMap
-        
+        mapView.addSubview(googleMap)
+        let marker = GMSMarker()
+        marker.location = CLLocationCoordinate2D(latitude: -1.102554, longitude: 37.013193)
+        marker.title = "Your Location"
+        marker.snippet = "JUJA"
+        marker.map = googleMap
     }
     @IBAction func goOnline(_ sender: Any) {
         askPermissionFirst()
