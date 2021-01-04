@@ -93,7 +93,7 @@ class MainController: UIViewController {
         email.text = viewModel?.email
         number.text = viewModel?.mobile
         fullName.text = viewModel?.fullName
-        profileImage.load.request(with: "https://scontent.fnbo9-1.fna.fbcdn.net/v/t1.0-1/p160x160/74585102_2675809565774216_3866378604090753024_n.jpg?_nc_cat=104&ccb=2&_nc_sid=dbb9e7&_nc_ohc=Rtm77jSJMekAX_ejMyQ&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&tp=6&oh=844ed40f163d29e162aae14f46791163&oe=5FD8ACDD")
+        profileImage.load.request(with: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg")
     }
     
     
