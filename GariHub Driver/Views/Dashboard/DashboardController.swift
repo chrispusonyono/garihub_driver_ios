@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 class DashboardController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet weak var mapView: UIView!
     var rejected = false
     var viewModel: DashboardViewModel?
 
@@ -32,8 +33,8 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
   //      alertController.addAction(defaultAction)
         //self.present(alertController, animated: true, completion: nil)
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        //view = mapView
+        let googleMap = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView = googleMap
         
     }
     @IBAction func goOnline(_ sender: Any) {
