@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 class DashboardController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var mapView: GMSMapView!
     var rejected = false
     var viewModel: DashboardViewModel?
 
@@ -23,24 +23,25 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
         initialize()
     }
     private func initialize(){
-        let Profile = UITapGestureRecognizer(target: self, action: #selector(self.goToProfile(_:)))
-        navigationDrawer.addGestureRecognizer(Profile)
-        navigationDrawer.isUserInteractionEnabled = true
-        
-        //let alertController = UIAlertController(title: "Error", message: "Invalid map configuration", preferredStyle: .alert)
-//     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let Profile = UITapGestureRecognizer(target: self, action: #selector(self.goToProfile(_:)))
+            navigationDrawer.addGestureRecognizer(Profile)
+            navigationDrawer.isUserInteractionEnabled = true
+            
+            //let alertController = UIAlertController(title: "Error", message: "Invalid map configuration", preferredStyle: .alert)
+    //     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
 
-  //      alertController.addAction(defaultAction)
-        //self.present(alertController, animated: true, completion: nil)
-        let camera = GMSCameraPosition.camera(withLatitude: -1.102554, longitude: 37.013193, zoom: 10.0)
-        let googleMap = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.addSubview(googleMap)
-        let marker = GMSMarker()
-        marker.location = CLLocationCoordinate2D(latitude: -1.102554, longitude: 37.013193)
-        marker.title = "Your Location"
-        marker.snippet = "JUJA"
-        marker.map = googleMap
-    }
+      //      alertController.addAction(defaultAction)
+            //self.present(alertController, animated: true, completion: nil)
+            let camera = GMSCameraPosition.camera(withLatitude: -1.102554, longitude: 37.013193, zoom: 10.0)
+
+            mapView.camera = camera
+            mapView.frame = CGRect.zero
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: -1.102554, longitude: 37.013193)
+            marker.title = "Your Location"
+            marker.snippet = "JUJA"
+            marker.map = mapView
+        }
     @IBAction func goOnline(_ sender: Any) {
         askPermissionFirst()
         self.viewModel?.router.trigger(.riderRequest)

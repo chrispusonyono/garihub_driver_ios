@@ -18,6 +18,10 @@ class RiderRequestController: UIViewController {
     @IBOutlet weak var iHaveArrived: UIButton!
     @IBOutlet weak var endTrip: UIButton!
     @IBOutlet weak var startTrip: UIButton!
+    @IBOutlet weak var message: UIButton!
+    @IBOutlet weak var call: UIButton!
+    @IBOutlet weak var contactHolder: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,10 +35,24 @@ class RiderRequestController: UIViewController {
         profileImage.load.request(with: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg")
         
     }
-    private func setupUI(){
-        profileImage.makeRounded()
-    
+    private func contact(hide: Bool){
+        let realWidth = requestHolder.frame.width
+        let realHeight = realWidth * 1.2
+        let itemheight = realHeight/3
         
+        if (hide){
+            requestHolder.frame = CGRect(x: 0, y: 0, width: realWidth, height: realHeight)
+            contactHolder.frame = CGRect(x: 0, y: 0, width: realWidth, height: 0)
+        }else{
+            requestHolder.frame = CGRect(x: 0, y: 0, width: realWidth, height: realHeight+itemheight)
+            contactHolder.frame = CGRect(x: 0, y: 0, width: realWidth, height: itemheight)
+            
+        }
+        
+    }
+    private func setupUI(){
+        
+        profileImage.makeRounded()
         accept.layer.cornerRadius = 10.0
         reject.layer.cornerRadius = 10.0
         iHaveArrived.layer.cornerRadius = 10.0
@@ -110,10 +128,15 @@ class RiderRequestController: UIViewController {
             iHaveArrived.isHidden = false
             break;
         case "end_trip":
+            contact(hide: true)
             endTrip.isHidden = false
             break;
         case "start_trip":
+            contact(hide: false)
             startTrip.isHidden = false
+            break;
+        case "end_trip":
+            
             break;
         default:
             break;
