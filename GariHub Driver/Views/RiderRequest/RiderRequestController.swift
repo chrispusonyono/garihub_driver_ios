@@ -8,9 +8,13 @@
 
 import UIKit
 import ImageLoader
-
+import Toast_Swift
+import CoreLocation
+import GoogleMaps
 class RiderRequestController: UIViewController {
 
+    @IBOutlet weak var requestHeightMultiplier: NSLayoutConstraint!
+    @IBOutlet weak var contactHeight: NSLayoutConstraint!
     @IBOutlet weak var requestHolder: UIView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var accept: UIButton!
@@ -21,7 +25,8 @@ class RiderRequestController: UIViewController {
     @IBOutlet weak var message: UIButton!
     @IBOutlet weak var call: UIButton!
     @IBOutlet weak var contactHolder: UIView!
-    
+    @IBOutlet weak var requestMap: GMSMapView!
+    	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +36,7 @@ class RiderRequestController: UIViewController {
     }
 
     private func initialize(){
-        changeStateTo(state: "new_ride")
+        changeRideTo(state: "new_ride")
         profileImage.load.request(with: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg")
         
     }
@@ -41,65 +46,74 @@ class RiderRequestController: UIViewController {
         let itemheight = realHeight/3
         
         if (hide){
-            requestHolder.frame = CGRect(x: 0, y: 0, width: realWidth, height: realHeight)
-            contactHolder.frame = CGRect(x: 0, y: 0, width: realWidth, height: 0)
+//            requestHolderRatio.constant = 1.2
+            //.aspectRation(6.0/5.0).isActive = true
+            contactHeight.constant =  0
+            contactHolder.isHidden = true
         }else{
-            requestHolder.frame = CGRect(x: 0, y: 0, width: realWidth, height: realHeight+itemheight)
-            contactHolder.frame = CGRect(x: 0, y: 0, width: realWidth, height: itemheight)
+//            requestHolderRatio.constant = 1
+            contactHeight.constant = itemheight/2
+            contactHolder.isHidden = false
             
         }
+        self.view.layoutIfNeeded()
+        self.requestHolder.layoutIfNeeded()
         
     }
     private func setupUI(){
         
         profileImage.makeRounded()
         accept.layer.cornerRadius = 10.0
+        message.layer.cornerRadius = 10.0
         reject.layer.cornerRadius = 10.0
+        call.layer.cornerRadius = 10.0
         iHaveArrived.layer.cornerRadius = 10.0
         endTrip.layer.cornerRadius = 10.0
         startTrip.layer.cornerRadius = 10.0
         requestHolder.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
         
         reject.layer.borderWidth = 2.0
-        
+        call.layer.borderWidth = 2.0
         
         accept.clipsToBounds = true
+        message.clipsToBounds = true
         reject.clipsToBounds = true
+        call.clipsToBounds = true
         iHaveArrived.clipsToBounds = true
         endTrip.clipsToBounds = true
         startTrip.clipsToBounds = true
         requestHolder.clipsToBounds = true
         
         accept.layer.masksToBounds = true
+        message.layer.masksToBounds = true
         reject.layer.masksToBounds = true
+        call.layer.masksToBounds = true
         iHaveArrived.layer.masksToBounds = true
         endTrip.layer.masksToBounds = true
         startTrip.layer.masksToBounds = true
         
         
         reject.layer.borderColor = UIColor.systemYellow.cgColor
+        call.layer.borderColor = UIColor.systemYellow.cgColor
     }
 
     @IBAction func acceptRideFromRider(_ sender: Any) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
-            self.changeStateTo(state: "i_have_arrived")
-        }
+        changeRideTo(state: "i_have_arrived")
+        
     }
     @IBAction func ihaveArrived(_ sender: Any) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
-            self.changeStateTo(state: "start_trip")
-               }
+        changeRideTo(state: "start_trip")
+               
     }
     @IBAction func swipeToStart(_ sender: Any) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
-            self.changeStateTo(state: "end_trip")
-               }
+        changeRideTo(state: "end_trip")
+               
     }
     @IBAction func swipeToEnd(_ sender: Any) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
-                   //changeStateTo(state: "end_trip")
-               }
+        changeRideTo(state: "end_trip")
+               
     }
+  
     
     /*
     // MARK: - Navigation
@@ -110,7 +124,14 @@ class RiderRequestController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+    private func changeRideTo(state: String){
+          self.view.makeToastActivity(.center)
+          DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+            self.view.hideAllToasts()
+            self.changeStateTo(state: state)
+            
+        }
+    }
     private func changeStateTo(state: String){
         
         accept.isHidden = true
@@ -125,14 +146,14 @@ class RiderRequestController: UIViewController {
             reject.isHidden = false
             break;
         case "i_have_arrived":
+            contact(hide: false)
             iHaveArrived.isHidden = false
             break;
         case "end_trip":
-            contact(hide: true)
             endTrip.isHidden = false
             break;
         case "start_trip":
-            contact(hide: false)
+            contact(hide: true)
             startTrip.isHidden = false
             break;
         case "end_trip":
@@ -144,4 +165,11 @@ class RiderRequestController: UIViewController {
         }
     }
 
+}
+extension UIView {
+
+    func aspectRation(_ ratio: CGFloat) -> NSLayoutConstraint {
+
+        return NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: self, attribute: .width, multiplier: ratio, constant: 0)
+    }
 }
