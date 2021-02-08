@@ -97,7 +97,7 @@ class LoginController: UIViewController {
             
             // MARK: Request configuration
             
-            var request = URLRequest(url: URL(string: "http://68.183.242.242/api/driver-service/v1/driver/login")!)
+            var request = URLRequest(url: URL(string: "http://dev.garihub.com/api/driver-service/v1/driver/login")!)
             request.httpMethod = "POST"
             request.allHTTPHeaderFields = requestHeaders
             request.httpBody = requestBodyComponents.query?.data(using: .utf8)

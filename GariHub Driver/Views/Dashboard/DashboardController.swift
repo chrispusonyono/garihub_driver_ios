@@ -10,7 +10,11 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 class DashboardController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet weak var firstTimeHolder: UIView!
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var closeFirstTimeGoOnline: UIImageView!
+    @IBOutlet weak var welcomePerson: UILabel!
     var rejected = false
     var viewModel: DashboardViewModel?
 
@@ -19,20 +23,26 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         initialize()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        setUpUI()
     }
     private func initialize(){
             let Profile = UITapGestureRecognizer(target: self, action: #selector(self.goToProfile(_:)))
             navigationDrawer.addGestureRecognizer(Profile)
             navigationDrawer.isUserInteractionEnabled = true
+        
+        let closePopup = UITapGestureRecognizer(target: self, action: #selector(self.closeFirstTime(_:)))
+        closeFirstTimeGoOnline.addGestureRecognizer(closePopup)
+        closeFirstTimeGoOnline.isUserInteractionEnabled = true
             
             //let alertController = UIAlertController(title: "Error", message: "Invalid map configuration", preferredStyle: .alert)
     //     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
 
       //      alertController.addAction(defaultAction)
             //self.present(alertController, animated: true, completion: nil)
-            let camera = GMSCameraPosition.camera(withLatitude: -1.102554, longitude: 37.013193, zoom: 10.0)
+            let camera = GMSCameraPosition.camera(withLatitude: -1.102554, longitude: 37.013193, zoom: 15.0)
 
             mapView.camera = camera
             mapView.frame = CGRect.zero
@@ -44,6 +54,8 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
         }
     @IBAction func goOnline(_ sender: Any) {
         askPermissionFirst()
+        let request = Request(id: "1", mobile: "0700824555", name: "Chrispus Onyono", pickup: "Juja", destination: "Java Westlands", rating: "2.5", profilePicturePath: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg", status: "0", pickupLatLong: "-1.102554,37.013193", destinationLatLong: "-1.102554,37.013193")
+        Constant.DATA.REQUEST.append(request!)
         self.viewModel?.router.trigger(.riderRequest)
     }
     private func connectWithSockets(){
@@ -86,6 +98,9 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
                 }
             }
     }
+    private func setUpUI(){
+        
+    }
 
     func hasLocationPermission() -> Bool {
         var hasPermission = false
@@ -109,4 +124,7 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
     @objc func goToProfile(_ sender: UITapGestureRecognizer) {
         self.viewModel?.router.trigger(.profile(fullName: "Chrispus Onyono",email: "chrispusonyono@gmail.com",mobile: "0700824555"))
        }
+    @objc func closeFirstTime(_ sender: UITapGestureRecognizer) {
+        self.firstTimeHolder.isHidden = !self.firstTimeHolder.isHidden
+          }
 }

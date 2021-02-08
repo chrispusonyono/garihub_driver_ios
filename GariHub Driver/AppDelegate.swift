@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.router = .init()
         self.router.setRoot(for: self.window ?? .init(frame: UIScreen.main.bounds))
         registerForPushNotifications()
-        GMSServices.provideAPIKey("AIzaSyDy4XgOiSH1w6F6Nt92CvU3cRjYtWiJjT4")
-        GMSPlacesClient.provideAPIKey("AIzaSyDy4XgOiSH1w6F6Nt92CvU3cRjYtWiJjT4")
+        GMSServices.provideAPIKey(Constant.GoogleMapApiKey)
+        GMSPlacesClient.provideAPIKey(Constant.GoogleMapApiKey)
         return true
     }
     

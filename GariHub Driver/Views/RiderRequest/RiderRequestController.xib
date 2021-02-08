@@ -16,13 +16,19 @@
                 <outlet property="contactHolder" destination="82A-ct-9Bj" id="W4G-oR-jGx"/>
                 <outlet property="endTrip" destination="xnA-oa-AQr" id="EJ6-mf-eM5"/>
                 <outlet property="iHaveArrived" destination="a8y-dY-5OP" id="t2Y-8U-ghx"/>
+                <outlet property="locationLabel" destination="GTT-KY-Ric" id="ld7-Im-WAF"/>
                 <outlet property="message" destination="5cv-7Z-18a" id="SRx-4f-Gjs"/>
-                <outlet property="profileImage" destination="UIW-xf-P5T" id="Udu-QH-PXK"/>
+                <outlet property="name" destination="i6R-Lu-832" id="Kjm-EX-Cqh"/>
+                <outlet property="pickupDestination" destination="8ha-1D-s4t" id="Ate-BW-z7w"/>
+                <outlet property="profileImage" destination="UIW-xf-P5T" id="Yhz-hC-A9l"/>
+                <outlet property="rating" destination="Rrn-4y-dxc" id="lJa-ka-HYm"/>
                 <outlet property="reject" destination="XAr-g7-iul" id="2PV-4Q-aqz"/>
+                <outlet property="requestContainer" destination="gbq-9W-QZ2" id="lU3-nA-d7U"/>
                 <outlet property="requestHeightMultiplier" destination="q57-Bk-7dq" id="lgy-W6-VyU"/>
                 <outlet property="requestHolder" destination="zI0-DH-bv8" id="PLb-pf-lTP"/>
                 <outlet property="requestMap" destination="vlb-VX-ru2" id="WxW-W5-8pu"/>
                 <outlet property="startTrip" destination="FhI-mb-Mtt" id="Y7t-Rb-YQR"/>
+                <outlet property="time" destination="Sx2-ww-dhk" id="1CW-nK-BK6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -24,6 +24,8 @@
 		0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */; };
 		0C4242F4254C4D0600F244AA /* PasswordRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */; };
 		0C4242F5254C4D0600F244AA /* PasswordRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */; };
+		0C6FF6D025B5AB3A009BDB01 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6FF6CF25B5AB3A009BDB01 /* Constant.swift */; };
+		0C6FF6D225B5B3C9009BDB01 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6FF6D125B5B3C9009BDB01 /* Request.swift */; };
 		0CC61A1325865B69007EDDDA /* GoOnlinePopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CC61A1225865B66007EDDDA /* GoOnlinePopupController.xib */; };
 		0CED11A0257E326C00D55655 /* RiderRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CED119E257E326C00D55655 /* RiderRequestController.swift */; };
 		0CED11A1257E326C00D55655 /* RiderRequestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CED119F257E326C00D55655 /* RiderRequestController.xib */; };
@@ -98,6 +100,8 @@
 		0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailRegistrationController.xib; sourceTree = "<group>"; };
 		0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRegisterController.swift; sourceTree = "<group>"; };
 		0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordRegisterController.xib; sourceTree = "<group>"; };
+		0C6FF6CF25B5AB3A009BDB01 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0C6FF6D125B5B3C9009BDB01 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		0CC61A1225865B66007EDDDA /* GoOnlinePopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoOnlinePopupController.xib; sourceTree = "<group>"; };
 		0CE3ED3A85DABFE40BDA4F15 /* Pods_GariHub_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GariHub_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CED119E257E326C00D55655 /* RiderRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderRequestController.swift; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 			children = (
 				FAA8B1E2254FFBD1001484E7 /* RegisterRequest.swift */,
 				FAA8B1FC255057D5001484E7 /* LoginResponse.swift */,
+				0C6FF6D125B5B3C9009BDB01 /* Request.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				FAA8B1F4255018F5001484E7 /* ClassNameProtocol.swift */,
 				FAA8B1F625501C5B001484E7 /* UITextField+.swift */,
 				0C05557D25A334960019ACCB /* UIImageView+.swift */,
+				0C6FF6CF25B5AB3A009BDB01 /* Constant.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -709,7 +715,9 @@
 				0C4242EC254C499000F244AA /* RegistrationTwoController.swift in Sources */,
 				FAA8B1FD255057D5001484E7 /* LoginResponse.swift in Sources */,
 				FAA8B1FB25504006001484E7 /* LoginViewModel.swift in Sources */,
+				0C6FF6D225B5B3C9009BDB01 /* Request.swift in Sources */,
 				FAA8B1E3254FFBD1001484E7 /* RegisterRequest.swift in Sources */,
+				0C6FF6D025B5AB3A009BDB01 /* Constant.swift in Sources */,
 				FAA8B1E9254FFEF4001484E7 /* RegistrationViewModel.swift in Sources */,
 				FAA8B1EE255003A7001484E7 /* EmailRegViewModel.swift in Sources */,
 				FAA8B1EC254FFF4D001484E7 /* OnboardingCoordinator.swift in Sources */,
