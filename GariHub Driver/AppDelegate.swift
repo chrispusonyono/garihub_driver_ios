@@ -18,17 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GMSServices.provideAPIKey(Constant.GoogleMapApiKey)
+        GMSPlacesClient.provideAPIKey(Constant.GoogleMapApiKey)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let landing = LoginController()
         window?.rootViewController = landing
         window?.makeKeyAndVisible()
         
-        self.router = .init()
-        self.router.setRoot(for: self.window ?? .init(frame: UIScreen.main.bounds))
+        
         registerForPushNotifications()
-        GMSServices.provideAPIKey(Constant.GoogleMapApiKey)
-        GMSPlacesClient.provideAPIKey(Constant.GoogleMapApiKey)
         return true
     }
     

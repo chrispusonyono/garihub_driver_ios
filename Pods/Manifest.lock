@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.0)
+  - Alamofire (4.9.1)
   - DynamicBlurView (3.0.1)
   - GoogleMaps (4.0.0):
     - GoogleMaps/Maps (= 4.0.0)
@@ -10,26 +10,26 @@ PODS:
     - GoogleMaps/Base (= 4.0.0)
   - ImageLoader (0.15.0)
   - ImagePicker (3.2.0)
-  - Moya (14.0.0):
-    - Moya/Core (= 14.0.0)
-  - Moya/Core (14.0.0):
-    - Alamofire (~> 5.0)
   - PopupDialog (0.9.2):
     - DynamicBlurView (~> 3.0.1)
+  - Starscream (4.0.4)
   - SwiftKeychainWrapper (4.0.1)
+  - SwiftyJSON (4.3.0)
   - Toast-Swift (4.0.1)
   - XCoordinator (2.0.7):
     - XCoordinator/Core (= 2.0.7)
   - XCoordinator/Core (2.0.7)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - GoogleMaps (= 4.0.0)
   - GooglePlaces (= 4.0.0)
   - ImageLoader
   - ImagePicker
-  - Moya
   - PopupDialog (~> 0.9)
+  - Starscream (~> 4.0.0)
   - SwiftKeychainWrapper
+  - SwiftyJSON (~> 4.0)
   - Toast-Swift (~> 4.0.0)
   - XCoordinator
 
@@ -41,25 +41,27 @@ SPEC REPOS:
     - GooglePlaces
     - ImageLoader
     - ImagePicker
-    - Moya
     - PopupDialog
+    - Starscream
     - SwiftKeychainWrapper
+    - SwiftyJSON
     - Toast-Swift
     - XCoordinator
 
 SPEC CHECKSUMS:
-  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
   GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
   GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   ImageLoader: e0635d52020d64dc7687e3a3b14dc53212ac0442
   ImagePicker: 1d950bbb2422548ed58791b4ec7f42fe42920511
-  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   PopupDialog: f4bb461bf70ff422be0b56656566424ee9273080
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: e6a1a28d1c383b5d19980dad21de0b446d27ae32
+PODFILE CHECKSUM: 62abf197743d9bab429b1d2562e596bde12d9764
 
 COCOAPODS: 1.10.0

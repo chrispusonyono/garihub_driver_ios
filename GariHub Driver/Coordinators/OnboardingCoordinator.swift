@@ -36,9 +36,7 @@ class OnboardingCoordinator: NavigationCoordinator<OnboardingRoutes> {
     override func prepareTransition(for route: OnboardingRoutes) -> NavigationTransition {
         switch route {
         case .dashboard:
-            let viewModel = DashboardViewModel(client: client, router: self.strongRouter)
             let dashboard = DashboardController()
-            dashboard.viewModel = viewModel
             return .set([dashboard])
         case .emailRegister(let fullName, let gender):
             let viewModel = EmailRegViewModel(client: client, router: self.strongRouter, fullName: fullName, gender: gender)
@@ -57,11 +55,11 @@ class OnboardingCoordinator: NavigationCoordinator<OnboardingRoutes> {
             let regTwoVC = RegistrationTwoController()
             regTwoVC.viewModel = viewModel
             return .set([regTwoVC])
-        case .login:
-            let viewModel = LoginViewModel(client: client, router: self.strongRouter)
-            let loginVC = LoginController()
-            loginVC.viewModel = viewModel
-            return .set([loginVC])
+        case .login:            
+            let viewModel = RegistrationViewModel(client: client, router: self.strongRouter)
+            let regTwoVC = RegistrationTwoController()
+            regTwoVC.viewModel = viewModel
+            return .set([regTwoVC])
         case .profile(let fullName, let email, let mobile):
             let viewModel = ViewModel(fullName: fullName, mobile: mobile, email: email, router: self.strongRouter)
             let profileCV = MainController()

@@ -14,6 +14,7 @@ import PopupDialog
 class MainController: UIViewController {
     
     var viewModel: ViewModel?
+    var profile = Constant.getUserProfile()
     var shown = true
     var online = false
     @IBOutlet weak var stateColor: UIView!
@@ -90,16 +91,16 @@ class MainController: UIViewController {
         profileImage.addGestureRecognizer(editUserProfile)
         profileImage.isUserInteractionEnabled = true
         
-        email.text = viewModel?.email
-        number.text = viewModel?.mobile
-        fullName.text = viewModel?.fullName
-        profileImage.load.request(with: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg")
+        email.text = profile.email
+        number.text = profile.mobile
+        fullName.text = profile.name
+        profileImage.load.request(with: profile.profilePicturePath)
     }
     
     
     
     @objc func goToDashboard(_ sender: UITapGestureRecognizer) {
-           self.viewModel?.router.trigger(.dashboard)
+        self.dismiss(animated: true, completion: nil)
        }
     @objc func editProfileIcon(_ sender: UITapGestureRecognizer) {
               editProfile()

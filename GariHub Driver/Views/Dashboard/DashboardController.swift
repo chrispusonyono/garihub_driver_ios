@@ -8,27 +8,42 @@
 
 import UIKit
 import CoreLocation
+import ImageLoader
 import GoogleMaps
-class DashboardController: UIViewController, CLLocationManagerDelegate {
+import Toast_Swift
+import Starscream
+class DashboardController: UIViewController, CLLocationManagerDelegate, WebSocketDelegate {
     @IBOutlet weak var firstTimeHolder: UIView!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var closeFirstTimeGoOnline: UIImageView!
     @IBOutlet weak var welcomePerson: UILabel!
+    let profile = Constant.getUserProfile()
     var rejected = false
-    var viewModel: DashboardViewModel?
+    var isConnected = false
 
     @IBOutlet weak var navigationDrawer: UIImageView!
     @IBOutlet weak var goOnlineBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initialize()
     }
     override func viewDidAppear(_ animated: Bool) {
+        
+        initialize()
         setUpUI()
     }
     private func initialize(){
+        if(Constant.justLoggedIn){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                self.firstTimeHolder.isHidden = false
+                self.welcomePerson.text = "Welcome \(self.profile.name)!"
+            }
+        }
+            
+        
+        self.profileImage.load.request(with: profile.profilePicturePath)
+        
             let Profile = UITapGestureRecognizer(target: self, action: #selector(self.goToProfile(_:)))
             navigationDrawer.addGestureRecognizer(Profile)
             navigationDrawer.isUserInteractionEnabled = true
@@ -42,7 +57,7 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
 
       //      alertController.addAction(defaultAction)
             //self.present(alertController, animated: true, completion: nil)
-            let camera = GMSCameraPosition.camera(withLatitude: -1.102554, longitude: 37.013193, zoom: 15.0)
+            let camera = GMSCameraPosition.camera(withLatitude: -1.102554, longitude: 37.013193, zoom: 20.0)
 
             mapView.camera = camera
             mapView.frame = CGRect.zero
@@ -54,18 +69,59 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
         }
     @IBAction func goOnline(_ sender: Any) {
         askPermissionFirst()
-        let request = Request(id: "1", mobile: "0700824555", name: "Chrispus Onyono", pickup: "Juja", destination: "Java Westlands", rating: "2.5", profilePicturePath: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg", status: "0", pickupLatLong: "-1.102554,37.013193", destinationLatLong: "-1.102554,37.013193")
-        Constant.DATA.REQUEST.append(request!)
-        self.viewModel?.router.trigger(.riderRequest)
+        //let request = Request(id: "1", mobile: "0700824555", name: "Chrispus Onyono", pickup: "Juja", destination: "Java Westlands", rating: "2.5", profilePicturePath: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg", status: "0", pickupLatLong: "-1.102554,37.013193", destinationLatLong: "-1.102554,37.013193")
+        //Constant.DATA.REQUEST = request
+        
+        connectWithSockets()
     }
     private func connectWithSockets(){
+       showLoading(load: true)
+        var request = URLRequest(url: URL(string: Constant.WebSocketURL)!)
+        request.timeoutInterval = 5 // Sets the timeout for the connection
+        request.setValue("client-id", forHTTPHeaderField: "")
+        Constant.socket = WebSocket(request: request)
+        Constant.socket?.delegate = self
+        Constant.socket?.connect()
         
+    }
+    func didReceive(event: WebSocketEvent, client: WebSocket) {
+        switch event {
+        case .connected(let headers):
+            isConnected = true
+            print("websocket is connected: \(headers)")
+            self.showLoading(load: false)
+            self.view.makeToast("You are now online")
+        case .disconnected(let reason, let code):
+            isConnected = false
+            print("websocket is disconnected: \(reason) with code: \(code)")
+        case .text(let string):
+            print("Received text: \(string)")
+        case .binary(let data):
+            print("Received data: \(data.count)")
+        case .ping(_):
+            break
+        case .pong(_):
+            break
+        case .viabilityChanged(_):
+            break
+        case .reconnectSuggested(_):
+            break
+        case .cancelled:
+            isConnected = false
+        case .error(let error):
+            isConnected = false
+            self.view.makeToast(error.debugDescription)
+        
+        }
     }
     private func showRiderRequest(){
         
     }
     private func showOnlinepPop(){
         
+    }
+    private func moveDriver(){
+        Constant.socket!.write(string: "{\"requestType\": \"LOCATION_UPDATE\",\"to\": \"to-identifier\",\"from\": \"from-identifier\",\"vehicleId\": 6,\"vehicle\": {\"vehicleLat\": \"-1.1734308\",\"vehicleLon\": \"36.9154656\",\"vehicleBearing\": \"0.000000\"}}")
     }
     func askPermissionFirst(){
     if !hasLocationPermission() {
@@ -98,8 +154,15 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
                 }
             }
     }
+    private func showLoading(load:Bool) -> Void {
+        if load{
+            self.view.makeToastActivity(.center)}
+        else{
+            self.view.hideToastActivity()
+        }
+    }
     private func setUpUI(){
-        
+        profileImage.makeRounded()
     }
 
     func hasLocationPermission() -> Bool {
@@ -122,7 +185,13 @@ class DashboardController: UIViewController, CLLocationManagerDelegate {
         return hasPermission
     }
     @objc func goToProfile(_ sender: UITapGestureRecognizer) {
-        self.viewModel?.router.trigger(.profile(fullName: "Chrispus Onyono",email: "chrispusonyono@gmail.com",mobile: "0700824555"))
+        
+        
+        //self.navigationController!.pushViewController(MainController(nibName: "MainController", bundle: nil), animated: true)
+        
+        let vc = MainController(nibName: "MainController", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
        }
     @objc func closeFirstTime(_ sender: UITapGestureRecognizer) {
         self.firstTimeHolder.isHidden = !self.firstTimeHolder.isHidden

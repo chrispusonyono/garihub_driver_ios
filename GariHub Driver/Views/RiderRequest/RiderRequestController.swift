@@ -36,7 +36,7 @@ class RiderRequestController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     
     
-    private let request =  Constant.DATA.REQUEST[0]
+    private let request =  Constant.DATA.REQUEST!
     var polyline = GMSPolyline()
     var animationPolyline = GMSPolyline()
     var path = GMSPath()

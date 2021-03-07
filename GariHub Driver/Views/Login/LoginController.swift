@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import PopupDialog
+import Alamofire
+import Toast_Swift
+import SwiftyJSON
 class LoginController: UIViewController {
     
-    var viewModel: LoginViewModel?
     
+    @IBOutlet weak var splash: UIView!
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
@@ -20,112 +22,82 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        signInBtn.addTarget(self, action: #selector(self.onTap(_:)), for: .touchUpInside)
-        
         let resertPassAction = UITapGestureRecognizer(target: self, action: #selector(self.resetPassword(_:)))
         forgotPassword.addGestureRecognizer(resertPassAction)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+
+            self.goHome()
+            
+        }
+      
     }
     
-    @objc func onTap(_ sender: UIButton) {
-        //        loginUser()
-        self.showSpinner(onView: self.view)
+    
+    @IBAction func loginClicked(_ sender: UIButton) ->Void{
         
-        guard let email = emailAddress.text else { return }
-        guard let password = password.text else { return }
-        guard let vm = self.viewModel else { return }
+        let username = emailAddress.text ?? ""
+        let password = self.password.text ?? ""
         
-        let request = LoginRequest(emailAddress: email, password: password)
+        if username.isEmpty {
+            let alert = UIAlertController(title: "Error", message: "Username can not be blank", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        if password.isEmpty  {
+            let alert = UIAlertController(title: "Error", message: "Password can not be blank", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        showLoading(load: true)
         
-        vm.provider.request(.login(request: request)) {
-            result in
-            self.removeSpinner()
-            switch result {
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.viewModel?.router.trigger(.dashboard)
-                //self.viewModel?.router.trigger(.profile(fullName: "Chrispus Onyono",email: email,mobile: "0700824555"))
-            case .success(let response):
+        
+        let parameters: Parameters=[
+            "client_id":"mobile-client",
+            "grant_type":"password",
+            "device": "IOS",
+            "token":UserDefaults(suiteName:"app")!.string(forKey: "deviceToken") ?? "0",
+            "username":username,
+            "password":password
+        ]
+        Alamofire.request("\(Constant.URLS.SERVER)/auth/realms/garihub-driver/protocol/openid-connect/token", method: .post, parameters: parameters).validate().responseJSON {
+            response in
+            self.showLoading(load: false)
+            switch response.result {
+            case .success:
                 
-                do {
-                    let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: response.data)
-                    self.viewModel?.router.trigger(.dashboard)
-                    print(loginResponse)
-                    DispatchQueue.main.async {
-                        self.showAlert(withTitle: "Success", withMessage: "Login was successful")
-                    }
-                }
-                catch {
-                    if(true){
-                        self.viewModel?.router.trigger(.dashboard)
-                    //self.viewModel?.router.trigger(.profile(fullName: "Chrispus Onyono",email: email,mobile: "0700824555"))
-                        return                        
-                    }
-                    DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Error", message: "Login failed", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  let dataIn = response.result.value as! NSDictionary
+                    if((dataIn.value(forKey: "token_type") as! String) == "bearer"){
+                        
+                        let profile = Profile(id: "1", token: dataIn.value(forKey: "access_token") as! String, mobile: "", name: "", rating: "0.0", profilePicturePath: "",email: username, status: false)
+                        Constant.setUserProfile(profile: profile!)
+                        Constant.justLoggedIn = true
+                        self.fetchProfile()
+                    }else{
 
-                        alertController.addAction(defaultAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        let alert = UIAlertController(title: "Error", message: dataIn.value(forKey: "error_description") as? String, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
                     }
+                
+            case .failure(let error):
 
+                if(response.response?.statusCode==401){
+                     let dataIn = JSON(response.data!)
+                
+                    let alert = UIAlertController(title: "Error", message: dataIn["error_description"].stringValue, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }else{
+                let alert = UIAlertController(title: "Error", message: "Unable to reach server: \(error.localizedDescription)", preferredStyle: UIAlertController.Style.alert)
+               alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+               self.present(alert, animated: true, completion: nil)
+                    print(error)
                 }
             }
         }
-        
-        
-    }
-    
-    func loginUser() {
-        if emailAddress.text == "" || password.text == "" {
-            self.showAlert(withTitle: "Empty", withMessage: "Email and password fields cannot be empty")
-        }
-        else {
-            self.showSpinner(onView: self.view)
-            guard let email = emailAddress.text else { return }
-            guard let password = password.text else { return }
-            
-            let requestHeaders: [String: String] = [
-                "Content-Type": "application/json"
-            ]
-            var requestBodyComponents = URLComponents()
-            requestBodyComponents.queryItems = [
-                URLQueryItem(name: "client_id", value: "mobile-client"),
-                URLQueryItem(name: "grant_type", value: "password"),
-                URLQueryItem(name: "username", value: email),
-                URLQueryItem(name: "password", value: password)
-            ]
-            
-            // MARK: Request configuration
-            
-            var request = URLRequest(url: URL(string: "http://dev.garihub.com/api/driver-service/v1/driver/login")!)
-            request.httpMethod = "POST"
-            request.allHTTPHeaderFields = requestHeaders
-            request.httpBody = requestBodyComponents.query?.data(using: .utf8)
-            
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                self.removeSpinner()
-                
-                do {
-                    let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data!)
-                    print(loginResponse)
-                    DispatchQueue.main.async {
-                        self.showAlert(withTitle: "Success", withMessage: "Login was successful")
-                    }
-                    
-                    
-                } catch {
-                    DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Invalid credentials", message: "Kindly enter valid username and password", preferredStyle: .alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                        alertController.addAction(defaultAction)
-                        self.present(alertController, animated: true, completion: nil)
-                    }
-                }
-                
-            }.resume()
-        }
-        
-        
         
     }
     override func viewWillAppear(_ animated: Bool){
@@ -152,5 +124,66 @@ class LoginController: UIViewController {
     popup.didMove(toParent: self)
    
     }
-    
+    private func showLoading(load:Bool) -> Void {
+        if load{
+            self.view.makeToastActivity(.center)}
+        else{
+            self.view.hideToastActivity()
+        }
+    }
+    private func goHome() ->Void{
+        
+//        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+//        let login = storyboard.instantiateViewController(withIdentifier: "Homepage") as! DashboardController
+//        self.present(login, animated:true, completion:nil)
+        if(Constant.getUserProfile().token != ""){
+            let vc = DashboardController(nibName: "DashboardController", bundle: nil)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }else{
+            splash.isHidden = true
+        }
+        
+        //self.navigationController!.pushViewController(vc, animated: true)
+    }
+    private func fetchProfile(){
+        splash.isHidden = false
+        showLoading(load: true)
+        let profile = Constant.getUserProfile()
+        
+        let headers: HTTPHeaders = ["Authorization":"Bearer \(profile.token)"]
+        Alamofire.request("\(Constant.URLS.PROJECT)driver-profile-service/v1/", method: .get, headers: headers).validate().responseJSON {
+            response in
+            self.showLoading(load: false)
+            switch response.result {
+            case .success:
+                
+                let sp = JSON(response.result.value as Any)
+                  var icon : String
+                  if(sp["profile_pic_url"].stringValue == ""){
+                      icon = Constant.ICON
+                  }
+                  else {
+                    icon = sp["profile_pic_url"].stringValue
+                  }
+                  profile.email = sp["email_address"].stringValue
+                  profile.mobile = sp["phone_number"].stringValue
+                  profile.profilePicturePath = icon
+                  profile.name = sp["first_name"].stringValue
+                  Constant.setUserProfile(profile: profile)
+                  self.goHome()
+            case .failure(let error):
+
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription + profile.token, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Retry", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction!) in
+                    self.fetchProfile()
+                }))
+               self.present(alert, animated: true, completion: nil)
+                    print(error)
+                
+            }
+        }
+        
+        
+    }
 }

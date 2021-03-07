@@ -24,6 +24,7 @@
 		0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */; };
 		0C4242F4254C4D0600F244AA /* PasswordRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */; };
 		0C4242F5254C4D0600F244AA /* PasswordRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */; };
+		0C4A3AAE25D190E5006984F2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4A3AAD25D190E5006984F2 /* Profile.swift */; };
 		0C6FF6D025B5AB3A009BDB01 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6FF6CF25B5AB3A009BDB01 /* Constant.swift */; };
 		0C6FF6D225B5B3C9009BDB01 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6FF6D125B5B3C9009BDB01 /* Request.swift */; };
 		0CC61A1325865B69007EDDDA /* GoOnlinePopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CC61A1225865B66007EDDDA /* GoOnlinePopupController.xib */; };
@@ -57,11 +58,9 @@
 		FAA8B1F5255018F5001484E7 /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1F4255018F5001484E7 /* ClassNameProtocol.swift */; };
 		FAA8B1F725501C5B001484E7 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1F625501C5B001484E7 /* UITextField+.swift */; };
 		FAA8B1F925501E31001484E7 /* BaseTextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1F825501E31001484E7 /* BaseTextFieldController.swift */; };
-		FAA8B1FB25504006001484E7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1FA25504006001484E7 /* LoginViewModel.swift */; };
 		FAA8B1FD255057D5001484E7 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1FC255057D5001484E7 /* LoginResponse.swift */; };
 		FAA8B20125506343001484E7 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B1FF25506343001484E7 /* DashboardController.swift */; };
 		FAA8B20225506343001484E7 /* DashboardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA8B20025506343001484E7 /* DashboardController.xib */; };
-		FAA8B2042550650F001484E7 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B2032550650F001484E7 /* DashboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +99,7 @@
 		0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailRegistrationController.xib; sourceTree = "<group>"; };
 		0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRegisterController.swift; sourceTree = "<group>"; };
 		0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordRegisterController.xib; sourceTree = "<group>"; };
+		0C4A3AAD25D190E5006984F2 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0C6FF6CF25B5AB3A009BDB01 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0C6FF6D125B5B3C9009BDB01 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		0CC61A1225865B66007EDDDA /* GoOnlinePopupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoOnlinePopupController.xib; sourceTree = "<group>"; };
@@ -144,11 +144,9 @@
 		FAA8B1F4255018F5001484E7 /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
 		FAA8B1F625501C5B001484E7 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		FAA8B1F825501E31001484E7 /* BaseTextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldController.swift; sourceTree = "<group>"; };
-		FAA8B1FA25504006001484E7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FAA8B1FC255057D5001484E7 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		FAA8B1FF25506343001484E7 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		FAA8B20025506343001484E7 /* DashboardController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardController.xib; sourceTree = "<group>"; };
-		FAA8B2032550650F001484E7 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +256,6 @@
 			children = (
 				0CF160E8253E049D00250C6F /* LoginController.swift */,
 				0CF160E9253E049D00250C6F /* LoginController.xib */,
-				FAA8B1FA25504006001484E7 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -386,6 +383,7 @@
 				FAA8B1E2254FFBD1001484E7 /* RegisterRequest.swift */,
 				FAA8B1FC255057D5001484E7 /* LoginResponse.swift */,
 				0C6FF6D125B5B3C9009BDB01 /* Request.swift */,
+				0C4A3AAD25D190E5006984F2 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -415,7 +413,6 @@
 			children = (
 				FAA8B1FF25506343001484E7 /* DashboardController.swift */,
 				FAA8B20025506343001484E7 /* DashboardController.xib */,
-				FAA8B2032550650F001484E7 /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -709,12 +706,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA8B1E5254FFE01001484E7 /* BaseAuthModel.swift in Sources */,
-				FAA8B2042550650F001484E7 /* DashboardViewModel.swift in Sources */,
 				0CED11A5257E332500D55655 /* RateController.swift in Sources */,
 				0CED11AC257E3BB400D55655 /* GoOnlinePopupController.swift in Sources */,
 				0C4242EC254C499000F244AA /* RegistrationTwoController.swift in Sources */,
 				FAA8B1FD255057D5001484E7 /* LoginResponse.swift in Sources */,
-				FAA8B1FB25504006001484E7 /* LoginViewModel.swift in Sources */,
 				0C6FF6D225B5B3C9009BDB01 /* Request.swift in Sources */,
 				FAA8B1E3254FFBD1001484E7 /* RegisterRequest.swift in Sources */,
 				0C6FF6D025B5AB3A009BDB01 /* Constant.swift in Sources */,
@@ -739,6 +734,7 @@
 				0C4242E4254C350C00F244AA /* ResetController.swift in Sources */,
 				FAA8B1F3255018D7001484E7 /* UIViewController+.swift in Sources */,
 				FAA8B1F02550063A001484E7 /* PasswordViewModel.swift in Sources */,
+				0C4A3AAE25D190E5006984F2 /* Profile.swift in Sources */,
 				0C4242E8254C399A00F244AA /* RegistrationController.swift in Sources */,
 				0C377FC825616FE700F7B287 /* MainController.swift in Sources */,
 				0CF160EF253E060A00250C6F /* AccountInfoController.swift in Sources */,
