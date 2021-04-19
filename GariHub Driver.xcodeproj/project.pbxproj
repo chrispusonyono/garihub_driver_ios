@@ -24,6 +24,7 @@
 		0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */; };
 		0C4242F4254C4D0600F244AA /* PasswordRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */; };
 		0C4242F5254C4D0600F244AA /* PasswordRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */; };
+		0C4743C2262D7787009FD323 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C4743C1262D7787009FD323 /* GoogleService-Info.plist */; };
 		0C4A3AAE25D190E5006984F2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4A3AAD25D190E5006984F2 /* Profile.swift */; };
 		0C6FF6D025B5AB3A009BDB01 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6FF6CF25B5AB3A009BDB01 /* Constant.swift */; };
 		0C6FF6D225B5B3C9009BDB01 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6FF6D125B5B3C9009BDB01 /* Request.swift */; };
@@ -99,6 +100,7 @@
 		0C4242EF254C4BA100F244AA /* EmailRegistrationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailRegistrationController.xib; sourceTree = "<group>"; };
 		0C4242F2254C4D0600F244AA /* PasswordRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRegisterController.swift; sourceTree = "<group>"; };
 		0C4242F3254C4D0600F244AA /* PasswordRegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordRegisterController.xib; sourceTree = "<group>"; };
+		0C4743C1262D7787009FD323 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C4A3AAD25D190E5006984F2 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0C6FF6CF25B5AB3A009BDB01 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0C6FF6D125B5B3C9009BDB01 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				FAA769C52514D49200750625 /* Assets.xcassets */,
 				FAA769C72514D49200750625 /* LaunchScreen.storyboard */,
 				FAA769CA2514D49200750625 /* Info.plist */,
+				0C4743C1262D7787009FD323 /* GoogleService-Info.plist */,
 				FAA8B1E6254FFE51001484E7 /* GariHubDriverClient.swift */,
 				FAA8B1F825501E31001484E7 /* BaseTextFieldController.swift */,
 			);
@@ -540,6 +543,7 @@
 				0CED11A1257E326C00D55655 /* RiderRequestController.xib in Resources */,
 				0C4242DF254C2B3800F244AA /* AccountInfoController.xib in Resources */,
 				0C4242E5254C350C00F244AA /* ResetController.xib in Resources */,
+				0C4743C2262D7787009FD323 /* GoogleService-Info.plist in Resources */,
 				0C377FC925616FE700F7B287 /* MainController.xib in Resources */,
 				0C4242ED254C499000F244AA /* RegistrationTwoController.xib in Resources */,
 				0C4242F1254C4BA100F244AA /* EmailRegistrationController.xib in Resources */,

@@ -20,19 +20,16 @@ class DashboardController: UIViewController, CLLocationManagerDelegate, WebSocke
     @IBOutlet weak var welcomePerson: UILabel!
     let profile = Constant.getUserProfile()
     var rejected = false
-    var isConnected = false
 
     @IBOutlet weak var navigationDrawer: UIImageView!
     @IBOutlet weak var goOnlineBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        
         initialize()
         setUpUI()
+        Constant.dashboard = self
     }
+
     private func initialize(){
         if(Constant.justLoggedIn){
             DispatchQueue.main.asyncAfter(deadline: .now() + 3){
@@ -66,36 +63,40 @@ class DashboardController: UIViewController, CLLocationManagerDelegate, WebSocke
             marker.title = "Your Location"
             marker.snippet = "JUJA"
             marker.map = mapView
+        
+        
+    //        socket initialition
+        var request = URLRequest(url: URL(string: Constant.WebSocketURL)!)
+        request.timeoutInterval = 25 // Sets the timeout for the connection
+        request.setValue("client-id", forHTTPHeaderField: profile.token)
+        Constant.socket = WebSocket(request: request)
+        Constant.socket?.delegate = self
         }
     @IBAction func goOnline(_ sender: Any) {
         askPermissionFirst()
-        //let request = Request(id: "1", mobile: "0700824555", name: "Chrispus Onyono", pickup: "Juja", destination: "Java Westlands", rating: "2.5", profilePicturePath: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg", status: "0", pickupLatLong: "-1.102554,37.013193", destinationLatLong: "-1.102554,37.013193")
-        //Constant.DATA.REQUEST = request
-        
         connectWithSockets()
     }
     private func connectWithSockets(){
        showLoading(load: true)
-        var request = URLRequest(url: URL(string: Constant.WebSocketURL)!)
-        request.timeoutInterval = 5 // Sets the timeout for the connection
-        request.setValue("client-id", forHTTPHeaderField: "")
-        Constant.socket = WebSocket(request: request)
-        Constant.socket?.delegate = self
         Constant.socket?.connect()
         
     }
     func didReceive(event: WebSocketEvent, client: WebSocket) {
+        self.showLoading(load: false)
         switch event {
         case .connected(let headers):
-            isConnected = true
+            Constant.isConnected = true
+            self.firstTimeHolder.isHidden = true
             print("websocket is connected: \(headers)")
-            self.showLoading(load: false)
             self.view.makeToast("You are now online")
         case .disconnected(let reason, let code):
-            isConnected = false
+            Constant.isConnected = false
             print("websocket is disconnected: \(reason) with code: \(code)")
+            self.view.makeToast("disconnected: \(reason)")
         case .text(let string):
+            showRiderRequest(request: string)
             print("Received text: \(string)")
+            self.view.makeToast(string)
         case .binary(let data):
             print("Received data: \(data.count)")
         case .ping(_):
@@ -107,14 +108,20 @@ class DashboardController: UIViewController, CLLocationManagerDelegate, WebSocke
         case .reconnectSuggested(_):
             break
         case .cancelled:
-            isConnected = false
+            Constant.isConnected = false
         case .error(let error):
-            isConnected = false
+            Constant.isConnected = false
             self.view.makeToast(error.debugDescription)
         
         }
     }
-    private func showRiderRequest(){
+    private func showRiderRequest(request :String){
+        self.view.makeToast("New Rider Request")
+        let request = Request(id: "1", mobile: "0700824555", name: "Chrispus Onyono", pickup: "Juja", destination: "Java Westlands", rating: "2.5", profilePicturePath: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg", status: "0", pickupLatLong: "-1.102554,37.013193", destinationLatLong: "-1.102554,37.013193")
+        Constant.DATA.REQUEST = request
+        let vc = RiderRequestController(nibName: "RiderRequestController", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
         
     }
     private func showOnlinepPop(){

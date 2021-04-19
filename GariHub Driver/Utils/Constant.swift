@@ -14,6 +14,9 @@ class Constant {
     static let WebSocketURL = "ws://dev.garihub.com/api/socket-service"
     static var justLoggedIn = false
     static var socket : WebSocket?
+    static var isConnected = false
+    static var loggedOut = false
+    static var dashboard : DashboardController?
     struct URLS {
         static let SERVER = "http://dev.garihub.com"
         static let PROJECT = SERVER+"/api/"

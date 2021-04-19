@@ -18,7 +18,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var forgotPassword: UILabel!
-    
+    var retries = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,8 +34,11 @@ class LoginController: UIViewController {
     }
     
     
+    
     @IBAction func loginClicked(_ sender: UIButton) ->Void{
-        
+        startLogin()
+    }
+    private func startLogin(){
         let username = emailAddress.text ?? ""
         let password = self.password.text ?? ""
         
@@ -71,10 +74,10 @@ class LoginController: UIViewController {
                   let dataIn = response.result.value as! NSDictionary
                     if((dataIn.value(forKey: "token_type") as! String) == "bearer"){
                         
-                        let profile = Profile(id: "1", token: dataIn.value(forKey: "access_token") as! String, mobile: "", name: "", rating: "0.0", profilePicturePath: "",email: username, status: false)
+                        let profile = Profile(id: "1", token: "", mobile: "", name: "", rating: "0.0", profilePicturePath: "",email: username, status: false)
                         Constant.setUserProfile(profile: profile!)
                         Constant.justLoggedIn = true
-                        self.fetchProfile()
+                        self.fetchProfile(token: dataIn.value(forKey: "access_token") as! String)
                     }else{
 
                         let alert = UIAlertController(title: "Error", message: dataIn.value(forKey: "error_description") as? String, preferredStyle: UIAlertController.Style.alert)
@@ -98,12 +101,17 @@ class LoginController: UIViewController {
                 }
             }
         }
-        
     }
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-    
+        
+        if (Constant.loggedOut) {
+            self.goHome()
+            Constant.loggedOut=false
+            
+        }
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -136,7 +144,7 @@ class LoginController: UIViewController {
 //        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
 //        let login = storyboard.instantiateViewController(withIdentifier: "Homepage") as! DashboardController
 //        self.present(login, animated:true, completion:nil)
-        if(Constant.getUserProfile().token != ""){
+        if((Constant.getUserProfile().token != "") && Constant.getUserProfile().mobile != ""){
             let vc = DashboardController(nibName: "DashboardController", bundle: nil)
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
@@ -146,12 +154,12 @@ class LoginController: UIViewController {
         
         //self.navigationController!.pushViewController(vc, animated: true)
     }
-    private func fetchProfile(){
+    private func fetchProfile(token : String){
         splash.isHidden = false
         showLoading(load: true)
         let profile = Constant.getUserProfile()
         
-        let headers: HTTPHeaders = ["Authorization":"Bearer \(profile.token)"]
+        let headers: HTTPHeaders = ["Authorization":"Bearer \(token)"]
         Alamofire.request("\(Constant.URLS.PROJECT)driver-profile-service/v1/", method: .get, headers: headers).validate().responseJSON {
             response in
             self.showLoading(load: false)
@@ -170,13 +178,24 @@ class LoginController: UIViewController {
                   profile.mobile = sp["phone_number"].stringValue
                   profile.profilePicturePath = icon
                   profile.name = sp["first_name"].stringValue
+                  profile.token = token
+                  profile.status = false
                   Constant.setUserProfile(profile: profile)
                   self.goHome()
             case .failure(let error):
 
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription + profile.token, preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription + token, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Retry", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction!) in
-                    self.fetchProfile()
+                    if(self.retries == 10){
+                        self.startLogin()
+                    }else if(self.retries == 15){
+                        self.splash.isHidden = true
+                        self.retries = 0
+                    }else{
+                       self.fetchProfile(token: token)
+                    }
+                    self.retries = self.retries + 1
+                    
                 }))
                self.present(alert, animated: true, completion: nil)
                     print(error)

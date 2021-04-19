@@ -95,6 +95,16 @@ class MainController: UIViewController {
         number.text = profile.mobile
         fullName.text = profile.name
         profileImage.load.request(with: profile.profilePicturePath)
+        
+        if(Constant.isConnected){
+            online = true
+            displayText.text = "Currently Online"
+            toggleText.text = "Offline"
+            stateColor.backgroundColor = UIColor.systemGray
+            displayColor.backgroundColor = UIColor.systemYellow
+        }
+            
+        
     }
     
     
@@ -117,7 +127,12 @@ class MainController: UIViewController {
        }
     
     @objc func goToLogin(_ sender: UITapGestureRecognizer) {
-        self.viewModel?.router.trigger(.login)
+        Constant.loggedOut = true
+        self.dismiss(animated: true, completion: nil)
+        Constant.dashboard?.dismiss(animated: true, completion: nil)
+        let profile = Constant.getUserProfile()
+        profile.token = ""        
+        Constant.setUserProfile(profile: profile)
     }
     
     func showLoading(load:Bool) -> Void {
@@ -207,7 +222,6 @@ class MainController: UIViewController {
         self.present(popup, animated: true, completion: nil)
     }
     @objc func changeDriverState(_ sender: UITapGestureRecognizer){
-        showLoading(load: true)
         stateTo(online: online)
     }
     @objc func unAvailable(_ sender: UITapGestureRecognizer) {
@@ -229,16 +243,19 @@ class MainController: UIViewController {
     
     func stateTo(online: Bool){
         if(online){
+            Constant.socket?.disconnect()
             displayText.text = "Currently Offline"
             toggleText.text = "Online"
             stateColor.backgroundColor = UIColor.systemYellow
             displayColor.backgroundColor = UIColor.systemGray
         }else{
+            Constant.socket?.connect()
             displayText.text = "Currently Online"
             toggleText.text = "Offline"
             stateColor.backgroundColor = UIColor.systemGray
             displayColor.backgroundColor = UIColor.systemYellow
         }
+        self.online = !online
     }
     func highLight(with searchTerm: String, targetString: String) -> NSAttributedString? {
 

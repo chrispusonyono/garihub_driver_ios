@@ -17,6 +17,8 @@ target 'GariHub Driver' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'PopupDialog', '~> 0.9'
   pod 'Starscream', '~> 4.0.0'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Analytics'
 
   target 'GariHub DriverTests' do
     inherit! :search_paths
